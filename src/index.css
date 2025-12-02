@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+html,body, #root {
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    overflow-y: scroll;
+  }
+
+  body, #root {
+    background-color: #0a0a0a;
+}
+
+/* Ocultar el footer en la vista de producto (layout sin scroll ni barra inferior oscura) */
+body.no-footer footer { display: none !important; }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .animate-typing {
+    animation: typing 2s steps(10, end), blink 0.7s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid;
+  }
+
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-9px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-slide-down {
+    animation: slideDown 0.88s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  @keyframes spin-once {
+    0% { transform: rotate(0deg); }
+    80% { transform: rotate(720deg); }
+    100% { transform: rotate(720deg); }
+  }
+  .animate-spin-once {
+    animation: spin-once 1s cubic-bezier(0.4,0,0.2,1) 1;
+  }
+  @keyframes fade-in-logo {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .animate-fade-in-logo {
+    animation: fade-in-logo 0.7s 0.7s both;
+  }
