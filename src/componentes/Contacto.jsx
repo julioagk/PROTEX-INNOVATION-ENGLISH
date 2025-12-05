@@ -2,18 +2,8 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaFacebook, FaInstagra
 
 export default function Contacto() {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 pt-24 pb-16 px-4">
+    <section className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 pt-[15px] md:pt-[15px] pb-16 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-            Contáctanos
-          </h1>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            ¿Tienes alguna pregunta? Estamos aquí para ayudarte. Envíanos un mensaje o contáctanos directamente.
-          </p>
-        </div>
-
         {/* Grid principal */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           

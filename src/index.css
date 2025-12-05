@@ -17,8 +17,9 @@ html, body, #root {
     overflow-y: scroll;
   }
 
-  body, #root {
-    background-color: #0a0a0a;
+body, #root {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 /* Ocultar el footer en la vista de producto (layout sin scroll ni barra inferior oscura) */

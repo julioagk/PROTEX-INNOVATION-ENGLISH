@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { products } from './productosData';
 
 const heroProducts = [
-  { id: 1, title: 'Premium Gear', price: '$99', badge: 'Best Seller', color: 'from-amber-600 to-amber-500' },
-  { id: 2, title: 'Summer Collection', price: '$79', badge: 'Trending', color: 'from-slate-700 to-slate-600' },
-  { id: 3, title: 'Exclusive Edition', price: '$149', badge: 'Exclusive', color: 'from-teal-600 to-teal-500' },
+  { id: 1, title: 'Industrial Breakers', badge: 'Reliable protection', color: 'from-blue-600 to-sky-500' },
+  { id: 2, title: 'Load Centers', badge: 'Fast installation', color: 'from-cyan-600 to-teal-500' },
+  { id: 3, title: 'Control Solutions', badge: 'Trusted brands', color: 'from-amber-500 to-orange-500' },
 ];
 
 export default function Section1() {
@@ -31,33 +31,33 @@ export default function Section1() {
         <div className="absolute top-1/3 right-1/3 w-72 h-72 bg-gradient-to-b from-amber-200/20 to-transparent rounded-full blur-3xl animate-pulse" />
       </div>
 
-      <div className="relative z-10 w-full h-screen flex items-center justify-center px-4 pt-10">
+      <div className="relative z-10 w-full min-h-[calc(100vh-64px)] flex items-center justify-center px-4 pt-4 pb-12 md:pb-20 lg:pb-28">
         <div className="max-w-7xl w-full mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="space-y-8 transition-all duration-700 opacity-100">
               <div className="space-y-2">
                 <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-bold uppercase tracking-widest shadow-lg backdrop-blur-md border border-blue-500/20">
-                  ⚡  Smart, Trusted, Quality.
+                  ⚡  Electrical solutions you trust
                 </span>
               </div>
 
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight">
-                <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight h-[100px] sm:h-[120px] md:h-[160px] lg:h-[180px] flex items-center">
+                <span className="block max-w-[16ch] bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
                   {product.title}
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-700 max-w-2xl leading-relaxed font-light">
-                Discover our curated collection of premium products. Guaranteed quality, fast shipping and personalized attention on every purchase.
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl leading-relaxed font-light">
+                Specialists in circuit breakers, load centers and electrical protection for residential, commercial and industrial projects. Fast delivery, expert support and premium manufacturers.
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-6">
-                <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden">
+              <div className="flex flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6">
+                <button className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 active:scale-95 relative overflow-hidden text-sm sm:text-base">
                   <span className="relative z-10">Shop Now</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
-                <button className="px-8 py-4 border-2 border-gray-900/30 text-gray-900 font-bold rounded-xl backdrop-blur-md hover:bg-gray-900/5 hover:border-gray-900/50 transition-all duration-300 hover:scale-105 active:scale-95">
+                <button className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-gray-900/30 text-gray-900 font-bold rounded-xl backdrop-blur-md hover:bg-gray-900/5 hover:border-gray-900/50 transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base">
                   Explore Catalog
                 </button>
               </div>
@@ -66,15 +66,15 @@ export default function Section1() {
               <div className="flex gap-8 pt-8 border-t border-gray-300">
                 <div className="space-y-1">
                   <p className="text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">10K+</p>
-                  <p className="text-sm text-gray-600 font-medium">Happy Customers</p>
+                  <p className="text-sm text-gray-600 font-medium">Satisfied clients</p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">500+</p>
-                  <p className="text-sm text-gray-600 font-medium">Products</p>
+                  <p className="text-sm text-gray-600 font-medium">SKUs in stock</p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">24/7</p>
-                  <p className="text-sm text-gray-600 font-medium">Support</p>
+                  <p className="text-sm text-gray-600 font-medium">Technical support</p>
                 </div>
               </div>
             </div>

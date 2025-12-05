@@ -17,6 +17,10 @@ const categories = [
 ];
 
 export default function Catalogo() {
+    const resolveImageSrc = (imgPath) => {
+      if (!imgPath) return EMPTY_PNG;
+      return imgPath;
+    };
   const [searchParams, setSearchParams] = useSearchParams();
   // Template default: render only local sample products to avoid fetching any remote data
   const [products, setProducts] = useState(localProducts);
@@ -51,111 +55,50 @@ export default function Catalogo() {
   };
 
   return (
-    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 pt-24 pb-16 px-4 overflow-hidden">
-      {/* Background gradient orbs animados */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" />
-
-      {/* Patrón de grid sutil - DESHABILITADO */}
-
-      {/* Barra de búsqueda y filtros - mejorada */}
-      <div className="relative z-10 w-full max-w-7xl mb-12">
-        {/* Card contenedor */}
-        <div className="backdrop-blur-xl border border-gray-300 bg-white/80 rounded-2xl p-6 hover:bg-white transition-all duration-300 shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* Búsqueda - ocupa 2 columnas */}
-            <div className="md:col-span-2">
-              <div className="relative group">
-                <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-hover:text-slate-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input
-                  type="text"
-                  placeholder="Search by name..."
-                  className="w-full pl-12 pr-4 py-3 text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all backdrop-blur-sm placeholder:text-gray-500 group-hover:bg-white group-hover:border-gray-400"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-                {search && (
-                  <button
-                    onClick={() => setSearch("")}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Categoría */}
-            <div className="group">
-              <select
-                className="w-full px-4 py-3 text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all cursor-pointer backdrop-blur-sm group-hover:bg-white group-hover:border-gray-400"
-                value={category}
-                onChange={(e) => handleCategoryChange(e.target.value)}
-              >
-                {categories.map((cat) => (
-                  <option key={cat.value} value={cat.value} className="bg-white text-gray-900">
-                    {cat.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Botón de búsqueda avanzada */}
-            <div className="flex items-end">
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/30 flex items-center justify-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                </svg>
-                <span className="hidden sm:inline">Filter</span>
-              </button>
-            </div>
+    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 pt-[15px] md:pt-[15px] pb-12 px-4 overflow-hidden">
+      {/* Hero simple para el catálogo */}
+      <div className="relative z-10 w-full max-w-7xl mb-4 md:mb-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-4">
+          <div>
+            <h1 className="text-2xl md:text-4xl font-black tracking-tight">Product Catalog</h1>
           </div>
-
-          {/* Chips de filtros rápidos */}
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="text-xs text-gray-600 font-medium">Quick categories:</span>
-            {categories.slice(1, 5).map((cat) => (
-              <button
-                key={cat.value}
-                onClick={() => handleCategoryChange(cat.value)}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                  category === cat.value
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 border border-gray-300'
-                }`}>
-              
-                {cat.label}
-              </button>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <div className="relative w-full md:w-auto">
+              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="w-full pl-10 pr-4 py-2.5 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all placeholder:text-gray-500"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+            <select
+              className="w-full md:w-auto px-4 py-2.5 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
+              value={category}
+              onChange={(e) => handleCategoryChange(e.target.value)}
+            >
+              {categories.map((cat) => (
+                <option key={cat.value} value={cat.value} className="bg-white text-gray-900">
+                  {cat.label}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
-
-        {/* Contador de resultados */}
-        <div className="mt-4 flex items-center justify-between">
-          <div className="text-xs text-gray-600">
-            {loading ? (
-              <span className="inline-flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-                Loading...
-              </span>
-            ) : (
-              <span>{filteredProducts.length} result{filteredProducts.length !== 1 ? 's' : ''}</span>
-            )}
-          </div>
+        <div className="mt-3 text-sm text-gray-600 flex items-center justify-between">
+          <span>{filteredProducts.length} result{filteredProducts.length !== 1 ? 's' : ''}</span>
           {filteredProducts.length > 0 && (
-            <div className="text-xs text-gray-600">
-              Showing <span className="text-blue-600 font-semibold">{filteredProducts.length}</span> of <span className="text-blue-600 font-semibold">{products.length}</span> products
-            </div>
+            <span>Showing <span className="text-gray-900 font-semibold">{filteredProducts.length}</span> of <span className="text-gray-900 font-semibold">{products.length}</span></span>
           )}
         </div>
       </div>
 
       {/* Grid de productos */}
       <div className="relative z-10 w-full max-w-7xl">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {/* Skeletons mientras carga */}
           {loading && (
             <>
@@ -178,15 +121,15 @@ export default function Catalogo() {
           {!loading && filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white hover:border-blue-400 hover:shadow-xl transition-all duration-300"
+              className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white hover:border-gray-700 hover:shadow-lg transition-all duration-300"
             >
               {/* Imagen del producto */}
               <div className="relative w-full aspect-square bg-gray-50 overflow-hidden">
                 <img
-                  src={product.image || product.imagen || EMPTY_PNG}
+                  src={resolveImageSrc(product.image || product.imagen)}
                   alt={product.title || product.nombre}
                   loading="lazy"
-                  className="object-cover w-full h-full transition-opacity duration-300 group-hover:opacity-90"
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-[1.02]"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
@@ -195,14 +138,14 @@ export default function Catalogo() {
                   }}
                 />
                 {/* Badge de precio */}
-                <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1.5 font-bold text-sm rounded-lg shadow-lg">
+                <div className="absolute top-3 right-3 bg-gray-900 text-white px-3 py-1.5 font-bold text-sm rounded-lg shadow-md">
                   ${product.price || product.precio}
                 </div>
               </div>
 
               {/* Contenido del producto */}
               <div className="flex flex-col flex-1 p-5 gap-3 bg-white">
-                <h3 className="text-lg font-bold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 line-clamp-1 group-hover:text-gray-700 transition-colors">
                   {product.title || product.nombre}
                 </h3>
                 <p className="text-sm text-gray-600 line-clamp-2 flex-1">
@@ -211,7 +154,7 @@ export default function Catalogo() {
                 
                 {/* Categoría badge */}
                 {product.category && product.category !== 'all' && (
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700 w-fit">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-200 text-gray-700 w-fit">
                     {categories.find(c => c.value === product.category)?.label || product.category}
                   </span>
                 )}
@@ -219,7 +162,7 @@ export default function Catalogo() {
                 {/* Botón */}
                 <Link
                   to={`/producto/${product.id}`}
-                  className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-200 text-center"
+                  className="mt-auto w-full bg-gray-900 hover:bg-gray-700 text-white font-semibold py-1.5 px-3 text-xs md:text-base md:py-2.5 md:px-4 rounded-lg transition-colors duration-200 text-center"
                 >
                   View Details
                 </Link>
@@ -229,17 +172,7 @@ export default function Catalogo() {
         </div>
       </div>
 
-      {/* Estilos para animaciones */}
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          50% { transform: translateY(-40px) translateX(15px); }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 0.6; }
-          50% { opacity: 0.8; }
-        }
-      `}</style>
+      {/* Sin animaciones exageradas: catálogo limpio y genérico */}
     </section>
   );
 }

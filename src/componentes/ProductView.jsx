@@ -43,7 +43,7 @@ export default function ProductView() {
     if (document.getElementById('root')) document.getElementById('root').style.backgroundColor = '#ffffff';
 
     // Evitar scroll global; gestionamos scroll dentro de columnas
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden'; // COMENTADO: Permitir scroll en móvil
 
     // Ocultar footer global solo en esta vista
     document.body.classList.add('no-footer');
@@ -170,7 +170,7 @@ export default function ProductView() {
   const images = Array.from(new Set([primary, ...imagesGathered].filter(Boolean)));
 
   return (
-  <section className="relative flex flex-col items-center h-screen px-3 md:px-4 pt-16 pb-6 bg-white overflow-hidden">
+  <section className="relative flex flex-col items-center min-h-screen md:h-screen px-3 md:px-4 pt-4 md:pt-16 pb-10 md:pb-6 bg-white md:overflow-hidden">
   {/* Fondo blanco ya forzado en html/body/root desde efecto; sin capa fija para evitar 'algo blanco' tapando */}
   <div className="w-full max-w-7xl h-full flex flex-col pb-4">
       
@@ -195,9 +195,9 @@ export default function ProductView() {
           </ol>
         </nav>
 
-  <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-6 flex-1 overflow-hidden">
+  <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-6 flex-1 md:overflow-hidden">
     {/* Columna izquierda: Galería profesional - miniaturas al lateral izquierdo + imagen principal */}
-          <div className="flex flex-col h-full gap-3 order-1 md:pt-1">
+          <div className="flex flex-col h-auto md:h-full gap-3 order-1 md:pt-1">
             {/* Desktop: imagen grande al lado izquierdo + grid de miniaturas derecho */}
             <div className="hidden md:grid md:grid-cols-[1fr_auto] md:gap-4 md:h-full">
               {/* Grid de miniaturas al lateral izquierdo */}
@@ -330,8 +330,8 @@ export default function ProductView() {
           </div>
 
           {/* Columna central: Descripción larga */}
-          <div className="order-3 md:order-2 flex flex-col w-full h-full overflow-hidden pb-2 md:pt-1">
-            <div className="pr-1 flex-1 overflow-auto pb-3">
+          <div className="order-3 md:order-2 flex flex-col w-full h-auto md:h-full md:overflow-hidden pb-2 md:pt-1">
+            <div className="pr-1 flex-1 md:overflow-auto pb-3">
               <h2 className="mb-2 text-base font-semibold text-gray-900 md:sr-only">Descripción</h2>
               <p className="text-sm md:text-[15px] leading-6 md:leading-7 text-gray-800 font-normal antialiased whitespace-pre-line text-left tracking-normal">
                 {product.description || product.descripcion || ""}
@@ -345,8 +345,8 @@ export default function ProductView() {
           </div>
 
           {/* Columna derecha: Título, precio y acciones */}
-          <aside className="order-2 md:order-3 flex flex-col justify-between w-full h-full overflow-hidden pb-2 md:pt-1">
-            <div className="pr-1 flex-1 overflow-auto pb-3 text-left">
+          <aside className="order-2 md:order-3 flex flex-col justify-between w-full h-auto md:h-full md:overflow-hidden pb-2 md:pt-1">
+            <div className="pr-1 flex-1 md:overflow-auto pb-3 text-left">
               <h1 className="mb-2 text-[26px] md:text-3xl font-extrabold tracking-tight text-gray-900">{product.title || product.nombre}</h1>
               <div className="mb-3">
                 <span className="text-[32px] md:text-4xl font-extrabold text-gray-900">${product.price || product.precio}</span>

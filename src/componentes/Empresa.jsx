@@ -1,6 +1,6 @@
 export default function Empresa() {
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900 pt-32 pb-20 px-4 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900 pt-[15px] md:pt-[15px] pb-20 px-4 overflow-hidden">
       {/* Decorative orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(59,130,246,0.2), transparent)'}} />
@@ -8,22 +8,6 @@ export default function Empresa() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-bold uppercase tracking-widest mb-6 shadow-lg">
-            About Us
-          </span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-gray-900 via-blue-700 to-cyan-700 bg-clip-text text-transparent">
-              Quiénes Somos
-            </span>
-          </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Somos una empresa líder en soluciones eléctricas con más de 15 años de experiencia, 
-            comprometida con la calidad y la excelencia en cada producto.
-          </p>
-        </div>
-
         {/* Main Content Grid */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
           {/* Left: Features */}

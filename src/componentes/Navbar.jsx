@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart } from "./CarContext";
 import { useToast } from "./Toast";
-import logo from '../pics/protexlogo.png'
+import logo from '../pics/protexlogonavbar.png'
 
 export default function Navbar() {
   const { cart, removeFromCart, addToCart, removeAllFromCart, clearCart } = useCart();
@@ -45,32 +45,32 @@ export default function Navbar() {
   const totalPrice = cart.reduce((acc, item) => acc + (item.price || item.precio) * item.quantity, 0);
 
   const isLightPage = location.pathname.startsWith('/Catalogo') || location.pathname.startsWith('/producto');
-  const navLinkClass = "text-gray-900 text-lg hover:text-blue-600 transition-colors duration-200 font-medium relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full";
-  const logoTextClass = "ml-2 text-lg font-bold tracking-wide text-gray-900 animate-fade-in-logo";
-  const desktopCartIconClass = "w-6 h-6 text-gray-900 hover:text-blue-600 transition-colors";
-  const mobileButtonClass = "p-2 mr-2 text-gray-900 rounded focus:outline-none hover:text-blue-600 transition-colors";
-  const mobileCartIconClass = "text-gray-900 w-7 h-7 hover:text-blue-600 transition-colors";
-  const mobileMenuLinkClass = "py-2 text-gray-900 rounded hover:text-blue-600 transition-colors relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full";
+  const navLinkClass = "text-gray-900 text-lg md:text-xl font-semibold tracking-wide transition-colors duration-200 relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-8";
+  const logoTextClass = "ml-2 text-lg sm:text-xl md:text-3xl font-black tracking-tight text-gray-900 animate-fade-in-logo whitespace-nowrap";
+  const desktopCartIconClass = "w-7 h-7 text-gray-900 hover:text-gray-700 transition-colors";
+  const mobileButtonClass = "p-2 mr-1 text-gray-900 rounded focus:outline-none hover:text-gray-700 transition-colors";
+  const mobileCartIconClass = "text-gray-900 w-7 h-7 hover:text-gray-700 transition-colors";
+  const mobileMenuLinkClass = "py-2 text-lg text-gray-900 rounded hover:text-gray-700 transition-colors relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-700 after:transition-all after:duration-300 hover:after:w-full";
 
   return (
     <>
     <nav 
       className="w-full overflow-hidden fixed top-0 left-0 z-[100] transition-all duration-500"
       style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        backgroundColor: 'rgba(255, 255, 255, 0.45)',
         backdropFilter: 'blur(20px) saturate(180%)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
         borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)'
       }}
     >
-      <div className="flex items-center h-11.5 w-full overflow-hidden">
+      <div className="flex items-center h-14 md:h-16 w-full overflow-hidden">
         {/* Logo + nombre de tienda (neutro) alineado a la izquierda */}
         <div className="flex items-center flex-shrink-0 overflow-hidden">
-          <a href="/" className="flex items-center text-xl font-semibold overflow-hidden">
-            <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+          <a href="/" className="flex items-center text-2xl font-semibold overflow-hidden">
+            <div className="w-14 h-14 flex items-center justify-center overflow-hidden">
                 <div className="transition-transform duration-700 ease-out" style={{ animationDelay: '0.2s' }}>
-                <img src={logo} alt="Protex" className="w-10 h-10 object-contain" />
+                <img src={logo} alt="Protex" className="w-14 h-14 object-contain" />
               </div>
             </div>
             <span className={logoTextClass} style={{ animationDelay: '0.7s' }}>
@@ -79,7 +79,7 @@ export default function Navbar() {
           </a>
         </div>
         {/* Desktop Menu (hidden on mobile) */}
-        <div className="justify-end flex-1 hidden m-5 md:flex">
+        <div className="justify-end flex-1 hidden px-6 md:flex">
           <div className="flex items-center space-x-6">
             <Link to="/" className={navLinkClass}>Home</Link>
             <Link to="/Catalogo" className={navLinkClass}>Products</Link>
@@ -96,7 +96,7 @@ export default function Navbar() {
           </div>
         </div>
         {/* Mobile Menu: hamburger and cart */}
-        <div className="flex items-center justify-end flex-1 m-2 md:hidden">
+        <div className="flex items-center justify-end flex-1 mr-2 md:hidden">
           <button
             className={mobileButtonClass}
             onClick={() => setMobileMenuOpen((v) => !v)}
@@ -119,16 +119,21 @@ export default function Navbar() {
         </div>
         {/* Mobile dropdown menu */}
         <div
-          className={`flex flex-row items-center justify-center w-full gap-4 px-4 py-0 border-b bg-gray-100/80 border-gray-300 md:hidden transition-all duration-300
-        ${mobileMenuOpen ? 'animate-slide-down opacity-100 pointer-events-auto' : 'animate-slide-up opacity-0 pointer-events-none'}`}
-        style={{height: mobileMenuOpen ? 'auto' : 0, overflow: 'hidden'}}
+          className={`flex flex-row items-center justify-center w-full gap-3 px-4 border-b md:hidden transition-all duration-300
+        ${mobileMenuOpen ? 'py-2 opacity-100 pointer-events-auto' : 'py-0 opacity-0 pointer-events-none border-none'}`}
+        style={{
+          height: mobileMenuOpen ? 'auto' : 0, 
+          overflow: 'hidden',
+        }}
         >
-          <Link to="/" className={mobileMenuLinkClass} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link to="/Catalogo" className={mobileMenuLinkClass} onClick={() => setMobileMenuOpen(false)}>Products</Link>
-          <Link to="/Empresa" className={mobileMenuLinkClass} onClick={() => setMobileMenuOpen(false)}>About</Link>
-          <Link to="/Contacto" className={mobileMenuLinkClass} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+          <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700 transition-colors" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link to="/Catalogo" className="text-base font-medium text-gray-900 hover:text-gray-700 transition-colors" onClick={() => setMobileMenuOpen(false)}>Products</Link>
+          <Link to="/Empresa" className="text-base font-medium text-gray-900 hover:text-gray-700 transition-colors" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          <Link to="/Contacto" className="text-base font-medium text-gray-900 hover:text-gray-700 transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </div>
       </nav>
+      {/* Spacer to offset the fixed navbar with tighter gap */}
+      <div className="w-full h-14 md:h-16"></div>
       
       {/* Drawer lateral del carrito - FUERA del nav */}
       <div

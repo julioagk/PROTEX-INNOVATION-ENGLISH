@@ -1,4 +1,5 @@
 import Section1 from "./Section1";
+import Section1Mobile from "./Section1Mobile";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
 import Banner from "./Banner";
@@ -11,7 +12,14 @@ export default function HomeSections() {
 
         {/* Sección 1 */}
         <section className="relative right-0 items-center justify-center w-full min-h-screen text-white bg-neutral-950 snap-start ">
-         <Section1 />
+         {/* Desktop Version */}
+         <div className="hidden md:block">
+            <Section1 />
+         </div>
+         {/* Mobile Version */}
+         <div className="block md:hidden">
+            <Section1Mobile />
+         </div>
         </section>
 
   

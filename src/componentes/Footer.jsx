@@ -4,100 +4,100 @@ import logo from '../pics/protexlogo.png'
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
+      <div className="container mx-auto px-6 py-8 md:py-16">
         {/* Grid principal */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 lg:gap-12">
           
-          {/* Logo y descripción */}
-          <div className="flex flex-col items-center sm:items-start space-y-4">
-            <div className="flex items-center space-x-3">
-                <img src={logo} alt="Protex" className="w-12 h-12 object-contain" />
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">Protex Innovation</h2>
+          {/* Logo y descripción - Order 1 on mobile */}
+          <div className="col-span-1 md:col-span-1 flex flex-col items-start space-y-4 order-1">
+            <div className="flex items-center space-x-2 md:space-x-3">
+                <img src={logo} alt="Protex" className="w-8 h-8 md:w-12 md:h-12 object-contain" />
+                <h2 className="text-xl md:text-3xl font-black text-gray-900 tracking-tight">Protex</h2>
               </div>
-            <p className="text-sm text-gray-700 text-center sm:text-left max-w-xs">
-              Soluciones industriales de alta calidad para tu negocio.
+            <p className="hidden md:block text-sm text-gray-500 text-left max-w-xs leading-relaxed">
+              High quality industrial solutions for your business. Trusted by professionals.
             </p>
           </div>
 
-          {/* Navegación */}
-          <div className="flex flex-col items-center sm:items-start">
-            <h3 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2 inline-block">Navegación</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="/" className="text-gray-700 hover:text-blue-500 transition-all duration-300 hover:translate-x-1 inline-block">
-                  → Inicio
-                </a>
-              </li>
-              <li>
-                <a href="/Catalogo" className="text-gray-700 hover:text-blue-500 transition-all duration-300 hover:translate-x-1 inline-block">
-                  → Catálogo
-                </a>
-              </li>
-              <li>
-                <a href="/Contacto" className="text-gray-700 hover:text-blue-500 transition-all duration-300 hover:translate-x-1 inline-block">
-                  → Contacto
-                </a>
-              </li>
-              <li>
-                <a href="/Empresa" className="text-gray-700 hover:text-blue-500 transition-all duration-300 hover:translate-x-1 inline-block">
-                  → Empresa
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contacto */}
-          <div className="flex flex-col items-center sm:items-start">
-            <h3 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2 inline-block">Contacto</h3>
-            <div className="space-y-3">
-              <a 
-                href="mailto:contact@yourstore.com" 
-                className="flex items-center space-x-3 text-gray-700 hover:text-blue-500 transition-colors duration-300 group"
-              >
-                <FaEnvelope className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">Protex@gmail.com</span>
-              </a>
-              <a 
-                href="tel:+YOUR_PHONE_NUMBER" 
-                className="flex items-center space-x-3 text-gray-700 hover:text-blue-500 transition-colors duration-300 group">
-              >
-                <FaPhone className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+YourPhoneNumber</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Redes Sociales */}
-          <div className="flex flex-col items-center sm:items-start">
-            <h3 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2 inline-block">Síguenos</h3>
-            <div className="flex space-x-4">
+          {/* Redes Sociales - Order 2 on mobile (Top Right) */}
+          <div className="col-span-1 md:col-span-1 flex flex-col items-end md:items-start order-2 md:order-4">
+            <h3 className="hidden md:block text-sm font-bold uppercase tracking-wider text-gray-900 mb-4">Follow Us</h3>
+            <div className="flex space-x-2 md:space-x-4 mt-1 md:mt-0">
               <a 
                 href="https://instagram.com/YOUR_INSTAGRAM" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-gray-200 p-3 rounded-full hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 transition-all duration-300 hover:scale-110 group"
+                className="bg-white border border-gray-200 p-2 md:p-3 rounded-full hover:border-gray-300 hover:shadow-md transition-all duration-300 group"
               >
-                <FaInstagram className="h-6 w-6 text-gray-900 group-hover:text-white transition-colors" />
+                <FaInstagram className="h-4 w-4 md:h-5 md:w-5 text-gray-600 group-hover:text-pink-600 transition-colors" />
               </a>
               <a 
                 href="https://facebook.com/YOUR_PAGE" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-gray-200 p-3 rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-110 group"
+                className="bg-white border border-gray-200 p-2 md:p-3 rounded-full hover:border-gray-300 hover:shadow-md transition-all duration-300 group"
               >
-                <FaFacebook className="h-6 w-6 text-gray-900 group-hover:text-white transition-colors" />
+                <FaFacebook className="h-4 w-4 md:h-5 md:w-5 text-gray-600 group-hover:text-blue-600 transition-colors" />
+              </a>
+            </div>
+          </div>
+
+          {/* Navegación - Order 3 on mobile (Bottom Left) */}
+          <div className="flex flex-col items-start order-3 md:order-2">
+            <h3 className="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-900 mb-3 md:mb-4">Navigation</h3>
+            <ul className="space-y-2 md:space-y-3 text-left">
+              <li>
+                <a href="/" className="text-gray-600 hover:text-blue-600 transition-colors text-xs md:text-sm font-medium">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/Catalogo" className="text-gray-600 hover:text-blue-600 transition-colors text-xs md:text-sm font-medium">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="/Contacto" className="text-gray-600 hover:text-blue-600 transition-colors text-xs md:text-sm font-medium">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/Empresa" className="text-gray-600 hover:text-blue-600 transition-colors text-xs md:text-sm font-medium">
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contacto - Order 4 on mobile (Bottom Right) */}
+          <div className="flex flex-col items-start order-4 md:order-3">
+            <h3 className="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-900 mb-3 md:mb-4">Contact</h3>
+            <div className="space-y-2 md:space-y-3 flex flex-col items-start">
+              <a 
+                href="mailto:contact@yourstore.com" 
+                className="flex items-center space-x-2 md:space-x-3 text-gray-600 hover:text-blue-600 transition-colors group"
+              >
+                <FaEnvelope className="h-3 w-3 md:h-4 md:w-4" />
+                <span className="text-xs md:text-sm font-medium">Protex@gmail.com</span>
+              </a>
+              <a 
+                href="tel:+YOUR_PHONE_NUMBER" 
+                className="flex items-center space-x-2 md:space-x-3 text-gray-600 hover:text-blue-600 transition-colors group">
+              >
+                <FaPhone className="h-3 w-3 md:h-4 md:w-4" />
+                <span className="text-xs md:text-sm font-medium">+YourPhoneNumber</span>
               </a>
             </div>
           </div>
         </div>
 
         {/* Divisor */}
-        <div className="mt-12 mb-6 border-t border-gray-800"></div>
+        <div className="mt-12 mb-8 border-t border-gray-200"></div>
 
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-500">
+            <p className="text-xs text-gray-500">
             &copy; {new Date().getFullYear()} Protex. Todos los derechos reservados.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
