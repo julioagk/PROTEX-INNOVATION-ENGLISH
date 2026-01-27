@@ -223,10 +223,6 @@ export default function Navbar() {
             <>
               <div className="mt-4 space-y-2 border-t pt-3 text-sm">
                 <div className="flex justify-between text-gray-700">
-                  <span>Subtotal:</span>
-                  <span className="font-semibold">${subtotal.toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between text-gray-700">
                   <span>Tax (8.25%):</span>
                   <span className="font-semibold text-sky-600">${ivaAmount.toFixed(2)}</span>
                 </div>

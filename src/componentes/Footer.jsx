@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaInstagram, FaFacebook, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import logo from '../pics/protexlogo.png'
 
 export default function Footer() {
@@ -7,10 +7,10 @@ export default function Footer() {
     <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
       <div className="container mx-auto px-6 py-8 md:py-16">
         {/* Grid principal */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4 lg:gap-12">
           
           {/* Logo y descripción - Order 1 on mobile */}
-          <div className="col-span-1 md:col-span-1 flex flex-col items-start space-y-4 order-1">
+          <div className="col-span-2 md:col-span-1 flex flex-col items-start space-y-4 order-1">
             <div className="flex items-center space-x-2 md:space-x-3">
                 <img src={logo} alt="Protex" className="w-8 h-8 md:w-12 md:h-12 object-contain" />
                 <h2 className="text-xl md:text-3xl font-black text-gray-900 tracking-tight">Protex</h2>
@@ -20,31 +20,8 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Redes Sociales - Order 2 on mobile (Top Right) */}
-          <div className="col-span-1 md:col-span-1 flex flex-col items-end md:items-start order-2 md:order-4">
-            <h3 className="hidden md:block text-sm font-bold uppercase tracking-wider text-gray-900 mb-4">Follow Us</h3>
-            <div className="flex space-x-2 md:space-x-4 mt-1 md:mt-0">
-              <a 
-                href="https://instagram.com/YOUR_INSTAGRAM" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white border border-gray-200 p-2 md:p-3 rounded-full hover:border-gray-300 hover:shadow-md transition-all duration-300 group"
-              >
-                <FaInstagram className="h-4 w-4 md:h-5 md:w-5 text-gray-600 group-hover:text-pink-600 transition-colors" />
-              </a>
-              <a 
-                href="https://facebook.com/YOUR_PAGE" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white border border-gray-200 p-2 md:p-3 rounded-full hover:border-gray-300 hover:shadow-md transition-all duration-300 group"
-              >
-                <FaFacebook className="h-4 w-4 md:h-5 md:w-5 text-gray-600 group-hover:text-blue-600 transition-colors" />
-              </a>
-            </div>
-          </div>
-
-          {/* Navegación - Order 3 on mobile (Bottom Left) */}
-          <div className="flex flex-col items-start order-3 md:order-2">
+          {/* Navegación - Order 2 on mobile */}
+          <div className="flex flex-col items-start order-2">
             <h3 className="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-900 mb-3 md:mb-4">Navigation</h3>
             <ul className="space-y-2 md:space-y-3 text-left">
               <li>

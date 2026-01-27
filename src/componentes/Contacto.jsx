@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaFacebook, FaInstagram, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 export default function Contacto() {
   return (
@@ -121,7 +121,7 @@ export default function Contacto() {
                   <a href="tel:+17139317058" className="text-gray-600 hover:text-teal-600 transition-colors block mt-2">
                     +1 (713) 931-7058
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Mon - Sat: 9:00am - 6:00pm</p>
+                  <p className="text-sm text-gray-500 mt-1">Mon - Fri: 9:00am - 5:00pm</p>
                 </div>
               </div>
             </div>
@@ -148,50 +148,8 @@ export default function Contacto() {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Monday - Friday</span>
-                  <span className="text-gray-900 font-medium">9:00am - 6:00pm</span>
+                  <span className="text-gray-900 font-medium">9:00am - 5:00pm</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Saturday</span>
-                  <span className="text-gray-900 font-medium">10:00am - 2:00pm</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Sunday</span>
-                  <span className="text-gray-500">Closed</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Redes sociales */}
-            <div className="bg-white border border-gray-300 rounded-2xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold mb-4">Follow us</h3>
-              <div className="grid grid-cols-3 gap-3">
-                <a 
-                  href="https://wa.me/17132015742" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl hover:bg-green-500/10 border border-gray-300 hover:border-green-500 transition-all group"
-                >
-                  <FaWhatsapp className="w-7 h-7 text-green-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-gray-600 group-hover:text-green-500">WhatsApp</span>
-                </a>
-                <a 
-                  href="https://facebook.com/protexinnovations" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl hover:bg-blue-500/10 border border-gray-300 hover:border-blue-500 transition-all group"
-                >
-                  <FaFacebook className="w-7 h-7 text-blue-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-gray-600 group-hover:text-blue-500">Facebook</span>
-                </a>
-                <a 
-                  href="https://instagram.com/protexinnovations" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl hover:bg-pink-500/10 border border-gray-300 hover:border-pink-500 transition-all group"
-                >
-                  <FaInstagram className="w-7 h-7 text-pink-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-gray-600 group-hover:text-pink-500">Instagram</span>
-                </a>
               </div>
             </div>
 
