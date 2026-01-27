@@ -92,7 +92,7 @@ export default function Navbar() {
             <Link to="/Catalogo" className={navLinkClass}>Products</Link>
             <Link to="/Empresa" className={navLinkClass}>About</Link>
             <Link to="/Contacto" className={navLinkClass}>Contact</Link>
-            <button className="relative" onClick={() => setCartOpen(true)} aria-label="Carrito">
+            <button className="relative" onClick={() => setCartOpen(true)} aria-label="Shopping Cart">
               <svg xmlns="http://www.w3.org/2000/svg" className={desktopCartIconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h10a1 1 0 00.95-.68L21 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
               </svg>
@@ -177,7 +177,7 @@ export default function Navbar() {
                     <button
                       className="px-2 py-1 text-xs bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
                       onClick={() => removeFromCart(item.id)}
-                      title="Quitar uno"
+                      title="Remove one"
                     >
                       −
                     </button>
@@ -185,7 +185,7 @@ export default function Navbar() {
                     <button
                       className="px-2 py-1 text-xs bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
                       onClick={() => addToCart({ ...item, quantity: 1 })}
-                      title="Agregar uno"
+                      title="Add one"
                     >
                       +
                     </button>
@@ -227,11 +227,11 @@ export default function Navbar() {
                   <span className="font-semibold">${subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-700">
-                  <span>IVA (16%):</span>
+                  <span>Tax (16%):</span>
                   <span className="font-semibold text-sky-600">${ivaAmount.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-700">
-                  <span>Envío:</span>
+                  <span>Shipping:</span>
                   <span className="font-semibold">$9.99</span>
                 </div>
                 <div className="flex justify-between font-bold text-gray-900 text-base border-t pt-2">
@@ -242,20 +242,20 @@ export default function Navbar() {
               <a
                 className="w-full mt-3 px-4 py-3 h-12 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-lg transition-all text-center flex items-center justify-center hover:shadow-lg active:scale-95"
                 href={`https://wa.me/17132015742?text=${encodeURIComponent(
-                  `¡Hola! Quiero hacer una compra:\n\n${cart
+                  `Hi! I want to make a purchase:\n\n${cart
                     .map((item, i) => `${i + 1}. ${(item.title || item.nombre)} x${item.quantity} - $${((item.price || item.precio) * item.quantity).toFixed(2)}`)
-                    .join("\n")}\n\n═════════════════\nSubtotal: $${subtotal.toFixed(2)}\nIVA (16%): $${ivaAmount.toFixed(2)}\nEnvío: $9.99\n═════════════════\n💰 TOTAL: $${totalWithIVA.toFixed(2)}`
+                    .join("\n")}\n\n═════════════════\nSubtotal: $${subtotal.toFixed(2)}\nTax (16%): $${ivaAmount.toFixed(2)}\nShipping: $9.99\n═════════════════\n💰 TOTAL: $${totalWithIVA.toFixed(2)}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                💬 Contactar por WhatsApp
+                💬 Contact on WhatsApp
               </a>
               <button
                 className="w-full mt-2 px-4 py-2 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all text-sm"
                 onClick={() => setCartOpen(false)}
               >
-                Continuar comprando
+                Keep Shopping
               </button>
             </>
           )}
