@@ -63,7 +63,7 @@ export default function Section3() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed mx-auto md:mx-0">
-            With over 20 years of experience, we are your ally in finding the best electrical products with competitive prices and quality service.
+            We specialize in quality electrical protection equipment from trusted manufacturers. Our mission is to provide reliable solutions for your electrical installations with expert support and fair pricing.
           </p>
         </div>
 

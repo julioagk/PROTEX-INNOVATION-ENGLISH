@@ -134,8 +134,8 @@ export default function Contacto() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-1">Location</h3>
-                  <p className="text-gray-600">Monterrey, Nuevo León</p>
-                  <p className="text-sm text-gray-500 mt-1">Mexico</p>
+                  <p className="text-gray-600">Houston, Texas</p>
+                  <p className="text-sm text-gray-500 mt-1">USA</p>
                 </div>
               </div>
             </div>
