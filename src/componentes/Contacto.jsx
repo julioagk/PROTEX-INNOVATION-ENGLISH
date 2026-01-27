@@ -121,7 +121,7 @@ export default function Contacto() {
                   <a href="tel:+17139317058" className="text-gray-600 hover:text-teal-600 transition-colors block mt-2">
                     +1 (713) 931-7058
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Mon - Fri: 9:00am - 5:00pm</p>
+                  <p className="text-sm text-gray-500 mt-1">Mon - Fri: 9:00am - 5:00pm | Sat: 9:00am - 2:00pm</p>
                 </div>
               </div>
             </div>
@@ -149,6 +149,10 @@ export default function Contacto() {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Monday - Friday</span>
                   <span className="text-gray-900 font-medium">9:00am - 5:00pm</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Saturday</span>
+                  <span className="text-gray-900 font-medium">9:00am - 2:00pm</span>
                 </div>
               </div>
             </div>
