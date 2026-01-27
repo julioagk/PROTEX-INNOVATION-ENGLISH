@@ -3,7 +3,7 @@ import { CheckCircleIcon, SparklesIcon, ShieldCheckIcon } from '@heroicons/react
 
 export default function Section1b() {
   return (
-    <section className="relative w-full bg-white py-16 md:py-24 px-4 overflow-hidden">
+    <section className="relative w-full bg-white py-20 md:py-28 px-4 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 right-0 w-80 h-80 bg-sky-600/5 rounded-full blur-3xl opacity-30" />
@@ -12,41 +12,41 @@ export default function Section1b() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Why Choose Us */}
-        <div className="mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-black mb-12 md:mb-16 tracking-tight text-gray-900 text-center">
+        <div className="mb-20 md:mb-24">
+          <h2 className="text-3xl md:text-5xl font-black mb-16 md:mb-20 tracking-tight text-gray-900 text-center">
             Why Trust <span className="text-sky-600">Protex Innovation</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* Card 1 */}
-            <div className="group flex flex-col items-center text-center p-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:border-sky-500/30 hover:shadow-xl transition-all duration-300">
-              <div className="mb-6 p-4 rounded-xl bg-sky-600/10 group-hover:bg-sky-600/20 transition-colors">
-                <CheckCircleIcon className="w-8 h-8 md:w-10 md:h-10 text-sky-600" />
+            <div className="group flex flex-col items-center text-center p-10 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:border-sky-500/30 hover:shadow-xl transition-all duration-300">
+              <div className="mb-6 p-5 rounded-xl bg-sky-600/10 group-hover:bg-sky-600/20 transition-colors">
+                <CheckCircleIcon className="w-10 h-10 md:w-12 md:h-12 text-sky-600" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">Quality Assured</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Quality Assured</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 All products meet international standards for electrical safety and reliability. We work exclusively with certified manufacturers.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="group flex flex-col items-center text-center p-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:border-slate-700/30 hover:shadow-xl transition-all duration-300">
-              <div className="mb-6 p-4 rounded-xl bg-slate-700/10 group-hover:bg-slate-700/20 transition-colors">
-                <ShieldCheckIcon className="w-8 h-8 md:w-10 md:h-10 text-slate-700" />
+            <div className="group flex flex-col items-center text-center p-10 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:border-slate-700/30 hover:shadow-xl transition-all duration-300">
+              <div className="mb-6 p-5 rounded-xl bg-slate-700/10 group-hover:bg-slate-700/20 transition-colors">
+                <ShieldCheckIcon className="w-10 h-10 md:w-12 md:h-12 text-slate-700" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">Expert Support</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Expert Support</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Our technical team is available to help you select the right equipment for your specific project requirements. We provide guidance and support.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="group flex flex-col items-center text-center p-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:border-teal-600/30 hover:shadow-xl transition-all duration-300">
-              <div className="mb-6 p-4 rounded-xl bg-teal-600/10 group-hover:bg-teal-600/20 transition-colors">
-                <SparklesIcon className="w-8 h-8 md:w-10 md:h-10 text-teal-600" />
+            <div className="group flex flex-col items-center text-center p-10 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 hover:border-teal-600/30 hover:shadow-xl transition-all duration-300">
+              <div className="mb-6 p-5 rounded-xl bg-teal-600/10 group-hover:bg-teal-600/20 transition-colors">
+                <SparklesIcon className="w-10 h-10 md:w-12 md:h-12 text-teal-600" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">Competitive Pricing</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Competitive Pricing</h3>
+              <p className="text-gray-600 leading-relaxed text-base">
                 Direct distribution partnerships allow us to offer the best prices without compromising on product quality or service.
               </p>
             </div>

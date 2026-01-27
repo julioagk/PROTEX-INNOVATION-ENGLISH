@@ -39,20 +39,6 @@ export default function Empresa() {
                 </div>
               </div>
             </div>
-
-            <div className="group">
-              <div className="flex items-start gap-4 p-6 rounded-2xl backdrop-blur-xl border border-gray-300 bg-white/80 hover:bg-white transition-all duration-300 shadow-lg">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-teal-700">
-                    <span className="text-xl">🤝</span>
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-2">Personalized Service</h3>
-                  <p className="text-gray-700">Our team is available 24/7 to support your needs.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right: About */}
