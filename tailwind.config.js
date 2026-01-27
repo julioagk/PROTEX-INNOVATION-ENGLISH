@@ -2,17 +2,19 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
     content: [
-        "./src/**/*/.{js,jsx,ts,tsx}",
+        "./src/**/*.{js,jsx,ts,tsx}",
     ],
     theme: {
         extend: {
             colors: {
-                richblack: '#010101',
-                primary: '#1a202c', /* Un color de fondo oscuro */
-                secondary: '#2d3748', /* Un color secundario oscuro */
-                accent: '#4a5568', /* Un color de acento oscuro */
-                text: '#e2e8f0', /* Un color de texto claro para contraste */
-                'text-light': '#cbd5e0', /* Un color de texto ligeramente más claro */
+                richblack: '#0f172a',
+                primary: '#0EA5E9', // azul cielo moderno
+                secondary: '#1E293B', // gris azulado profundo
+                accent: '#38BDF8', // acento azul claro (sin naranja)
+                text: '#0F172A', // texto principal
+                'text-light': '#475569', // texto secundario
+                'bg-light': '#F8FAFC', // fondo claro
+                'border-color': '#E2E8F0', // borde suave
             }
         },
         

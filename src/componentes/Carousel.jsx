@@ -1,5 +1,6 @@
 import Section1 from "./Section1";
 import Section1Mobile from "./Section1Mobile";
+import Section1b from "./Section1b";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
 import Banner from "./Banner";
@@ -22,6 +23,10 @@ export default function HomeSections() {
          </div>
         </section>
 
+        {/* Sección 1b - Why Choose Us */}
+        <section className="relative items-center justify-center min-h-screen text-gray-900 bg-white">
+          <Section1b />
+        </section>
   
         {/* Sección 2 */}
         <section className="relative items-center justify-center min-h-screen text-white bg-gradient-to-b from-green to-green">

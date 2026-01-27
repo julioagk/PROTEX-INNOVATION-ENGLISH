@@ -1,1 +1,65 @@
-[]
+[
+	{
+		"id": 1,
+		"nombre": "Siemens BQD360 3 Pole 480V 60 Amp Circuit Breaker",
+		"descripcion": "Siemens BQD360 3 Pole 480V 60 Amp Circuit Breaker",
+		"precio": 165.99,
+		"imagen": "/IMG%20PRODUCTS%202/Siemens%20BQD360%203%20Pole%20480V%2060%20Amp%20Circuit%20Breaker.png",
+		"images": ["/IMG%20PRODUCTS%202/Siemens%20BQD360%203%20Pole%20480V%2060%20Amp%20Circuit%20Breaker.png"],
+		"category": "interruptores-3p"
+	},
+	{
+		"id": 2,
+		"nombre": "Siemens BQD340 3 Pole 480V 40 Amp Circuit Breaker",
+		"descripcion": "Siemens BQD340 3 Pole 480V 40 Amp Circuit Breaker",
+		"precio": 165.99,
+		"imagen": "/IMG%20PRODUCTS%202/Siemens%20BQD340%203%20Pole%20480V%2040%20Amp%20Circuit%20Breaker.png",
+		"images": ["/IMG%20PRODUCTS%202/Siemens%20BQD340%203%20Pole%20480V%2040%20Amp%20Circuit%20Breaker.png"],
+		"category": "interruptores-3p"
+	},
+	{
+		"id": 3,
+		"nombre": "Siemens BQD330 3 Pole 480V 30 Amp Circuit Breaker",
+		"descripcion": "Siemens BQD330 3 Pole 480V 30 Amp Circuit Breaker",
+		"precio": 165.99,
+		"imagen": "/IMG%20PRODUCTS%202/Siemens%20BQD330%203%20Pole%20480V%2030%20Amp%20Circuit%20Breaker.png",
+		"images": ["/IMG%20PRODUCTS%202/Siemens%20BQD330%203%20Pole%20480V%2030%20Amp%20Circuit%20Breaker.png"],
+		"category": "interruptores-3p"
+	},
+	{
+		"id": 4,
+		"nombre": "Siemens BQD320 3 Pole 480V 20 Amp Circuit Breaker",
+		"descripcion": "Siemens BQD320 3 Pole 480V 20 Amp Circuit Breaker",
+		"precio": 165.99,
+		"imagen": "/IMG%20PRODUCTS%202/Siemens%20BQD320%203%20Pole%20480V%2020%20Amp%20Circuit%20Breaker.png",
+		"images": ["/IMG%20PRODUCTS%202/Siemens%20BQD320%203%20Pole%20480V%2020%20Amp%20Circuit%20Breaker.png"],
+		"category": "interruptores-3p"
+	},
+	{
+		"id": 5,
+		"nombre": "Siemens BQD315 3 Pole 480V 15 Amp Circuit Breaker",
+		"descripcion": "Siemens BQD315 3 Pole 480V 15 Amp Circuit Breaker",
+		"precio": 165.99,
+		"imagen": "/IMG%20PRODUCTS%202/Siemens%20BQD315%203%20Pole%20480V%2015%20Amp%20Circuit%20Breaker.png",
+		"images": ["/IMG%20PRODUCTS%202/Siemens%20BQD315%203%20Pole%20480V%2015%20Amp%20Circuit%20Breaker.png"],
+		"category": "interruptores-3p"
+	},
+	{
+		"id": 6,
+		"nombre": "Siemens Q2100 2 Pole 120/240V 100 Amp Circuit Breaker",
+		"descripcion": "Siemens Q2100 2 Pole 120/240V 100 Amp Circuit Breaker",
+		"precio": 37.99,
+		"imagen": "/IMG%20PRODUCTS%202/Siemens%20Q2100%202%20Pole%20120-240V%20100%20Amp%20Circuit%20Breaker.png",
+		"images": ["/IMG%20PRODUCTS%202/Siemens%20Q2100%202%20Pole%20120-240V%20100%20Amp%20Circuit%20Breaker.png"],
+		"category": "interruptores-2p"
+	},
+	{
+		"id": 7,
+		"nombre": "Siemens BQD3100 3 Pole 480v 100 Amp Circuit Main Breaker",
+		"descripcion": "Siemens BQD3100 3 Pole 480v 100 Amp Circuit Main Breaker",
+		"precio": 189.99,
+		"imagen": "/IMG%20PRODUCTS%202/Siemens%20BQD3100%203%20Pole%20480v%20100%20Amp%20Circuit%20Main%20Breaker.png",
+		"images": ["/IMG%20PRODUCTS%202/Siemens%20BQD3100%203%20Pole%20480v%20100%20Amp%20Circuit%20Main%20Breaker.png"],
+		"category": "interruptores-3p"
+	}
+]

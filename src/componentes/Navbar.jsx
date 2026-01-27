@@ -43,25 +43,32 @@ export default function Navbar() {
 
   // Calcular total $
   const totalPrice = cart.reduce((acc, item) => acc + (item.price || item.precio) * item.quantity, 0);
+  
+  // Calcular IVA (16% típicamente en tiendas)
+  const IVA_RATE = 0.16;
+  const ivaAmount = parseFloat((totalPrice * IVA_RATE).toFixed(2));
+  const subtotal = parseFloat(totalPrice.toFixed(2));
+  const shippingCost = cart.length > 0 ? 9.99 : 0; // Costo fijo de envío
+  const totalWithIVA = parseFloat((subtotal + ivaAmount + shippingCost).toFixed(2));
 
   const isLightPage = location.pathname.startsWith('/Catalogo') || location.pathname.startsWith('/producto');
-  const navLinkClass = "text-gray-900 text-lg md:text-xl font-semibold tracking-wide transition-colors duration-200 relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all after:duration-300 hover:after:w-8";
-  const logoTextClass = "ml-2 text-lg sm:text-xl md:text-3xl font-black tracking-tight text-gray-900 animate-fade-in-logo whitespace-nowrap";
-  const desktopCartIconClass = "w-7 h-7 text-gray-900 hover:text-gray-700 transition-colors";
-  const mobileButtonClass = "p-2 mr-1 text-gray-900 rounded focus:outline-none hover:text-gray-700 transition-colors";
-  const mobileCartIconClass = "text-gray-900 w-7 h-7 hover:text-gray-700 transition-colors";
-  const mobileMenuLinkClass = "py-2 text-lg text-gray-900 rounded hover:text-gray-700 transition-colors relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-700 after:transition-all after:duration-300 hover:after:w-full";
+  const navLinkClass = "text-white text-lg md:text-xl font-semibold tracking-wide transition-colors duration-200 relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-8 hover:text-gray-100";
+  const logoTextClass = "ml-2 text-lg sm:text-xl md:text-3xl font-black tracking-tight text-white animate-fade-in-logo whitespace-nowrap";
+  const desktopCartIconClass = "w-7 h-7 text-white hover:text-gray-100 transition-colors";
+  const mobileButtonClass = "p-2 mr-1 text-white rounded focus:outline-none hover:text-gray-100 transition-colors";
+  const mobileCartIconClass = "text-white w-7 h-7 hover:text-gray-100 transition-colors";
+  const mobileMenuLinkClass = "py-2 text-lg text-white rounded hover:text-gray-100 transition-colors relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full";
 
   return (
     <>
     <nav 
       className="w-full overflow-hidden fixed top-0 left-0 z-[100] transition-all duration-500"
       style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.45)',
+        backgroundColor: '#475569',
         backdropFilter: 'blur(20px) saturate(180%)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
         borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)'
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)'
       }}
     >
       <div className="flex items-center h-14 md:h-16 w-full overflow-hidden">
@@ -90,7 +97,7 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h10a1 1 0 00.95-.68L21 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-amber-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
+                <span className="absolute -top-2 -right-2 w-4 h-4 bg-sky-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
               )}
             </button>
           </div>
@@ -112,7 +119,7 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h10a1 1 0 00.95-.68L21 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-blue-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
+                <span className="absolute -top-2 -right-2 w-4 h-4 bg-sky-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
               )}
             </button>
           </div>
@@ -152,7 +159,7 @@ export default function Navbar() {
         </div>
         <div className="p-4 bg-white">
           {cart.length === 0 ? (
-            <p className="text-gray-500">No hay productos en el carrito.</p>
+            <p className="text-gray-500">No products in cart.</p>
           ) : (
             <ul className="space-y-2">
               {cart.map((item) => (
@@ -166,26 +173,26 @@ export default function Navbar() {
                       <span className="ml-2 text-xs text-gray-500">x{item.quantity}</span>
                     )}
                   </span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <button
-                      className="px-2 py-1 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
+                      className="px-2 py-1 text-xs bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
                       onClick={() => removeFromCart(item.id)}
                       title="Quitar uno"
                     >
                       −
                     </button>
-                    <span className="px-2 text-lg font-bold text-gray-900">{item.quantity}</span>
+                    <span className="px-2 text-sm font-bold text-gray-900">{item.quantity}</span>
                     <button
-                      className="px-2 py-1 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors"
+                      className="px-2 py-1 text-xs bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
                       onClick={() => addToCart({ ...item, quantity: 1 })}
                       title="Agregar uno"
                     >
                       +
                     </button>
-                    <span className="font-bold text-blue-600">${(item.price || item.precio) * item.quantity}</span>
+                    <span className="font-bold text-sky-600 text-sm">${((item.price || item.precio) * item.quantity).toFixed(2)}</span>
                     {/* Botón para quitar todos */}
                     <button
-                      className="px-2 py-1 text-sm bg-red-700 hover:bg-red-600 text-white rounded transition-colors"
+                      className="px-1 py-1 text-xs bg-red-700 hover:bg-red-600 text-white rounded transition-colors"
                       onClick={() => {
                         removeAllFromCart(item.id);
                         addToast(`${item.title || item.nombre} eliminado del carrito`, 'info');
@@ -194,7 +201,7 @@ export default function Navbar() {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-4 h-4"
+                        className="w-3 h-3"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -214,22 +221,42 @@ export default function Navbar() {
           )}
           {cart.length > 0 && (
             <>
-              <div className="flex items-center justify-between mt-4 mb-2 font-bold text-gray-900">
-                <span>Total:</span>
-                <span>${totalPrice}</span>
+              <div className="mt-4 space-y-2 border-t pt-3 text-sm">
+                <div className="flex justify-between text-gray-700">
+                  <span>Subtotal:</span>
+                  <span className="font-semibold">${subtotal.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between text-gray-700">
+                  <span>IVA (16%):</span>
+                  <span className="font-semibold text-sky-600">${ivaAmount.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between text-gray-700">
+                  <span>Envío:</span>
+                  <span className="font-semibold">$9.99</span>
+                </div>
+                <div className="flex justify-between font-bold text-gray-900 text-base border-t pt-2">
+                  <span>Total:</span>
+                  <span className="text-sky-600">${totalWithIVA.toFixed(2)}</span>
+                </div>
               </div>
               <a
-                className="w-full mt-2 px-4 py-2 h-11 bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold rounded-lg transition-all text-center flex items-center justify-center hover:shadow-lg hover:shadow-green-500/30 active:scale-95"
-                href={`https://wa.me/YOUR_WHATSAPP_NUMBER?text=${encodeURIComponent(
-                  `¡Hola! Quiero comprar:\n\n${cart
-                    .map((item, i) => `${i + 1}. ${(item.title || item.nombre)} x${item.quantity} - $${(item.price || item.precio) * item.quantity}`)
-                    .join("\n")}\n\nTotal: $${totalPrice}`
+                className="w-full mt-3 px-4 py-3 h-12 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-lg transition-all text-center flex items-center justify-center hover:shadow-lg active:scale-95"
+                href={`https://wa.me/17132015742?text=${encodeURIComponent(
+                  `¡Hola! Quiero hacer una compra:\n\n${cart
+                    .map((item, i) => `${i + 1}. ${(item.title || item.nombre)} x${item.quantity} - $${((item.price || item.precio) * item.quantity).toFixed(2)}`)
+                    .join("\n")}\n\n═════════════════\nSubtotal: $${subtotal.toFixed(2)}\nIVA (16%): $${ivaAmount.toFixed(2)}\nEnvío: $9.99\n═════════════════\n💰 TOTAL: $${totalWithIVA.toFixed(2)}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Buy via WhatsApp
+                💬 Contactar por WhatsApp
               </a>
+              <button
+                className="w-full mt-2 px-4 py-2 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all text-sm"
+                onClick={() => setCartOpen(false)}
+              >
+                Continuar comprando
+              </button>
             </>
           )}
         </div>

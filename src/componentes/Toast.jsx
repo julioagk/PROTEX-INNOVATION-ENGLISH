@@ -28,7 +28,7 @@ export function ToastProvider({ children }) {
 			{children}
 			<div aria-live="polite" className="fixed bottom-6 right-6 z-[99999] flex flex-col gap-3">
 				{toasts.map((toast) => (
-					<div key={toast.id} className={`max-w-sm w-full px-4 py-3 rounded-lg shadow-lg text-white ${toast.type === 'error' ? 'bg-red-600' : toast.type === 'success' ? 'bg-green-600' : 'bg-black/80'}`}>
+					<div key={toast.id} className={`max-w-sm w-full px-4 py-3 rounded-lg shadow-lg text-white ${toast.type === 'error' ? 'bg-red-600' : toast.type === 'success' ? 'bg-teal-600' : 'bg-black/80'}`}>
 						<div className="text-sm">{toast.message}</div>
 					</div>
 				))}
