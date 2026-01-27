@@ -104,7 +104,6 @@ export default function Contacto() {
                   <a href="mailto:lesly@protexinnovations.com" className="text-gray-600 hover:text-sky-600 transition-colors block mt-2">
                     lesly@protexinnovations.com
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Response within 24-48 hours</p>
                 </div>
               </div>
             </div>

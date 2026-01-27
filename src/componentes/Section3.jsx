@@ -16,30 +16,14 @@ const benefits = [
     title: 'Nationwide Shipping',
     description: 'Fast and secure delivery. Free shipping on your first purchase.',
   },
-  {
-    icon: CreditCardIcon,
-    title: 'Secure Payment Options',
-    description: 'Multiple payment methods available. 100% safe.',
-  },
-  {
-    icon: SparklesIcon,
+  {    icon: SparklesIcon,
     title: 'Competitive Prices',
     description: 'Best prices without compromising quality.',
-  },
-  {
-    icon: ClockIcon,
-    title: '24/7 Support',
-    description: 'Available support every day of the week.',
   },
   {
     icon: ShieldCheckIcon,
     title: 'Full Warranty',
     description: 'Manufacturer warranty on all products.',
-  },
-  {
-    icon: CheckCircleIcon,
-    title: 'Original Products',
-    description: 'Only certified and trusted brands.',
   }
 ];
 
