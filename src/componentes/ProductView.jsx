@@ -118,7 +118,6 @@ export default function ProductView() {
     );
   }
 
-  const stock = 12; // Opcional: reemplazar por product.stock si existe
   // Normalizar galería de imágenes con tolerancia a distintos formatos/campos
   const normalizeToArray = (val) => {
     if (!val) return [];
@@ -361,8 +360,6 @@ export default function ProductView() {
             </div>
 
             <div className="pt-3 border-t mt-2 flex-shrink-0 pb-2">
-              <div className="text-sm font-medium text-teal-600">{stock > 0 ? `Stock available (${stock})` : "Out of stock"}</div>
-
               {/* Selector de cantidad */}
               <div className="mt-3 flex items-center gap-3">
                 <span className="text-sm text-gray-700">Quantity</span>
@@ -381,14 +378,14 @@ export default function ProductView() {
                     value={qty}
                     onChange={(e) => {
                       const v = parseInt(e.target.value, 10);
-                      if (!Number.isNaN(v)) setQty(Math.max(1, Math.min(v, stock || 999)));
+                      if (!Number.isNaN(v)) setQty(Math.max(1, Math.min(v, 999)));
                     }}
                   />
                   <button
                     type="button"
                     className="px-3 py-2 text-gray-800 hover:bg-gray-100 disabled:opacity-40"
-                    onClick={() => setQty((q) => Math.min((stock || 999), q + 1))}
-                    disabled={stock ? qty >= stock : false}
+                    onClick={() => setQty((q) => Math.min(999, q + 1))}
+                    disabled={qty >= 999}
                     aria-label="Increase quantity"
                   >
                     +
@@ -412,9 +409,8 @@ export default function ProductView() {
                     addToCart({ ...product, quantity: qty });
                     addToast(`✅ ${product.title || product.nombre} agregado al carrito`, 'success');
                   }}
-                  disabled={stock === 0}
                 >
-                  {stock === 0 ? "Out of stock" : "Add to cart"}
+                  Add to cart
                 </button>
                 <button
                   className="w-full h-11 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 hover:border-gray-400 hover:shadow-sm active:scale-95 transition-all"
