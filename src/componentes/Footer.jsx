@@ -12,8 +12,7 @@ export default function Footer() {
           {/* Logo y descripción - Order 1 on mobile */}
           <div className="col-span-2 md:col-span-1 flex flex-col items-start space-y-4 order-1">
             <div className="flex items-center space-x-2 md:space-x-3">
-                <img src={logo} alt="Protex" className="w-8 h-8 md:w-12 md:h-12 object-contain" />
-                <h2 className="text-xl md:text-3xl font-black text-gray-900 tracking-tight">Protex</h2>
+                <img src={logo} alt="Logo" className="w-8 h-8 md:w-12 md:h-12 object-contain" />
               </div>
             <p className="hidden md:block text-sm text-gray-500 text-left max-w-xs leading-relaxed">
               High quality industrial solutions for your business. Trusted by professionals.
@@ -75,7 +74,7 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Protex. All rights reserved.
+            &copy; {new Date().getFullYear()} All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <a href="/politica-privacidad" className="text-gray-500 hover:text-blue-500 transition-colors duration-300">

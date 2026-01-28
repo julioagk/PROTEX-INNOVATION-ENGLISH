@@ -14,7 +14,7 @@ export default function Section1b() {
         {/* Why Choose Us */}
         <div className="mb-20 md:mb-24">
           <h2 className="text-3xl md:text-5xl font-black mb-16 md:mb-20 tracking-tight text-gray-900 text-center">
-            Why Trust <span className="text-sky-600">Protex Innovation</span>
+            Why Trust <span className="text-sky-600">Us</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">

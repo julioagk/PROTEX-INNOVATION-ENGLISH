@@ -77,12 +77,9 @@ export default function Navbar() {
           <a href="/" className="flex items-center text-2xl font-semibold overflow-hidden">
             <div className="w-14 h-14 flex items-center justify-center overflow-hidden">
                 <div className="transition-transform duration-700 ease-out" style={{ animationDelay: '0.2s' }}>
-                <img src={logo} alt="Protex" className="w-14 h-14 object-contain" />
+                <img src={logo} alt="Logo" className="w-14 h-14 object-contain" />
               </div>
             </div>
-            <span className={logoTextClass} style={{ animationDelay: '0.7s' }}>
-              Protex Innovation
-            </span>
           </a>
         </div>
         {/* Desktop Menu (hidden on mobile) */}

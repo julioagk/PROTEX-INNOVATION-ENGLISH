@@ -44,7 +44,7 @@ export default function Empresa() {
           {/* Right: About */}
           <div className="space-y-6">
             <div className="backdrop-blur-xl border border-gray-300 bg-white/80 rounded-2xl p-8 hover:bg-white transition-all duration-300 shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">About Protex Innovation</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">About Us</h3>
               <p className="text-gray-700 leading-relaxed">
                 We are a specialized distributor of electrical protection equipment and circuit breakers. Our commitment is to provide high-quality products with reliable technical support for residential, commercial, and industrial projects.
               </p>

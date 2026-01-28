@@ -22,7 +22,7 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
               <p className="text-gray-700 leading-relaxed">
-                By accessing and using the Protex Innovation website, you accept and agree to be bound by the terms 
+                By accessing and using this website, you accept and agree to be bound by the terms 
                 and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
               </p>
             </section>
@@ -31,7 +31,7 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Products and Services</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Protex Innovation offers industrial electrical products including circuit breakers, load centers, 
+                We offer industrial electrical products including circuit breakers, load centers, 
                 and protection devices. We reserve the right to:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
@@ -62,7 +62,7 @@ export default function Terms() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Shipping and Delivery</h2>
               <p className="text-gray-700 leading-relaxed">
                 We ship products within the United States. Delivery times are estimates and not guaranteed. 
-                Protex Innovation is not responsible for delays caused by shipping carriers, customs, weather, 
+                We are not responsible for delays caused by shipping carriers, customs, weather, 
                 or other circumstances beyond our control. Risk of loss and title for items purchased pass to you 
                 upon delivery to the carrier.
               </p>
@@ -87,7 +87,7 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Product Warranties</h2>
               <p className="text-gray-700 leading-relaxed">
-                Products sold by Protex Innovation may be covered by manufacturer warranties. We are not responsible 
+                Products sold may be covered by manufacturer warranties. We are not responsible 
                 for manufacturer warranties, and any warranty claims should be directed to the manufacturer. We make 
                 no representations or warranties of any kind, express or implied, about the completeness, accuracy, 
                 reliability, suitability or availability of products.
@@ -98,7 +98,7 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
               <p className="text-gray-700 leading-relaxed">
-                To the fullest extent permitted by applicable law, Protex Innovation shall not be liable for any 
+                To the fullest extent permitted by applicable law, we shall not be liable for any 
                 indirect, incidental, special, consequential or punitive damages, or any loss of profits or revenues, 
                 whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses 
                 resulting from your use of our products or services.
@@ -109,8 +109,7 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Intellectual Property</h2>
               <p className="text-gray-700 leading-relaxed">
-                All content on this website, including text, graphics, logos, images, and software, is the property of 
-                Protex Innovation or its content suppliers and is protected by international copyright laws. You may not 
+                All content on this website, including text, graphics, logos, images, and software, is our property or its content suppliers and is protected by international copyright laws. You may not 
                 reproduce, distribute, or create derivative works from any content on this site without our express 
                 written permission.
               </p>

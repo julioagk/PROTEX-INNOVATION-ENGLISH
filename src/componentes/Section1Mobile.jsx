@@ -25,7 +25,7 @@ export default function Section1Mobile() {
           New Collection
         </h2>
         <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
-          Protex Innovation
+          Electrical Protection
         </h1>
         <p className="text-lg text-gray-600 max-w-[280px]">
           Professional electrical protection.
