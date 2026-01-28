@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  TruckIcon, 
   CreditCardIcon, 
   SparklesIcon,
   CheckCircleIcon,
@@ -12,18 +11,18 @@ import {
 
 const benefits = [
   {
-    icon: TruckIcon,
-    title: 'Nationwide Shipping',
-    description: 'Fast and secure delivery. Free shipping on your first purchase.',
+    icon: ShieldCheckIcon,
+    title: 'Full Warranty',
+    description: 'Manufacturer warranty on all products.',
   },
   {    icon: SparklesIcon,
     title: 'Competitive Prices',
     description: 'Best prices without compromising quality.',
   },
   {
-    icon: ShieldCheckIcon,
-    title: 'Full Warranty',
-    description: 'Manufacturer warranty on all products.',
+    icon: CreditCardIcon,
+    title: 'Secure Payment',
+    description: 'Safe and reliable payment processing.',
   }
 ];
 

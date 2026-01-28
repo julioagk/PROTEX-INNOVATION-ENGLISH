@@ -79,9 +79,6 @@ export default function Section1b() {
             </div>
             <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
               <p className="text-gray-700 mb-4 leading-relaxed">
-                <strong>Fast Delivery</strong> across the country with tracking and professional packaging.
-              </p>
-              <p className="text-gray-700 mb-4 leading-relaxed">
                 <strong>Expert Consultation</strong> to ensure you select the right products for your project.
               </p>
               <p className="text-gray-700 leading-relaxed">
