@@ -198,19 +198,25 @@ export default function Catalogo() {
             >
               {/* Imagen del producto */}
               <div className="relative w-full aspect-square bg-white overflow-hidden flex items-center justify-center">
-                <img
-                  src={resolveImageSrc(product.image || product.imagen)}
-                  alt={product.title || product.nombre}
-                  loading="lazy"
-                  className="object-contain w-[85%] h-[85%] transition-transform duration-300 group-hover:scale-105"
-                  style={{ imageRendering: '-webkit-optimize-contrast', filter: 'brightness(1.05) contrast(0.98)' }}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = EMPTY_PNG;
-                    e.target.style.objectFit = 'contain';
-                    e.target.style.padding = '2rem';
-                  }}
-                />
+                <div className="relative w-[85%] h-[85%] flex items-center justify-center">
+                  <img
+                    src={resolveImageSrc(product.image || product.imagen)}
+                    alt={product.title || product.nombre}
+                    loading="lazy"
+                    className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    style={{ 
+                      imageRendering: '-webkit-optimize-contrast', 
+                      filter: 'brightness(1.1) contrast(0.95)',
+                      boxShadow: 'inset 0 0 0 30px white'
+                    }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = EMPTY_PNG;
+                      e.target.style.objectFit = 'contain';
+                      e.target.style.padding = '2rem';
+                    }}
+                  />
+                </div>
                 {/* Badge de precio */}
                 <div className="absolute top-3 right-3 bg-sky-600 text-white px-3 py-1.5 font-bold text-sm rounded-lg shadow-md">
                   ${product.price || product.precio}
