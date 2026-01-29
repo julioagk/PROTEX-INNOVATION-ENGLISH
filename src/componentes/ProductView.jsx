@@ -419,7 +419,6 @@ export default function ProductView() {
                   Back to catalog
                 </button>
               </div>
-              <div className="mt-2 text-[11px] text-gray-500">We coordinate deliveries and shipments — update this information for your store.</div>
             </div>
           </aside>
         </div>
