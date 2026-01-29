@@ -197,12 +197,13 @@ export default function Catalogo() {
               className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white hover:border-gray-700 hover:shadow-lg transition-all duration-300"
             >
               {/* Imagen del producto */}
-              <div className="relative w-full aspect-square bg-white overflow-hidden">
+              <div className="relative w-full aspect-square bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden flex items-center justify-center">
                 <img
                   src={resolveImageSrc(product.image || product.imagen)}
                   alt={product.title || product.nombre}
                   loading="lazy"
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  className="object-contain w-full h-full p-6 transition-transform duration-300 group-hover:scale-110"
+                  style={{ imageRendering: '-webkit-optimize-contrast', maxWidth: '100%', maxHeight: '100%' }}
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
