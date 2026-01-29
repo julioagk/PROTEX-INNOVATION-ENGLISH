@@ -33,8 +33,8 @@ export default function Section1Mobile() {
         
         {/* Enlace de texto simple */}
         <button 
-          onClick={() => navigate('/Catalogo')}
-          className="mt-2 text-blue-600 font-medium hover:text-blue-700 flex items-center gap-1"
+           onClick={() => navigate('/Catalogo')}
+          className="mt-2 text-amber-600 font-medium hover:text-amber-700 flex items-center gap-1"
         >
           Shop now <span aria-hidden="true">&rarr;</span>
         </button>
@@ -44,15 +44,24 @@ export default function Section1Mobile() {
       <div className="flex-1 w-full flex flex-col items-center justify-center relative my-4">
         <div className="relative w-full h-full flex items-center justify-center">
             {featuredProducts.map((product, index) => (
-                <img 
-                key={product.id}
-                src={product.image} 
-                alt={product.title}
-                className={`absolute w-full max-w-[320px] h-auto object-contain drop-shadow-2xl transition-all duration-700 ease-in-out ${
+                <div
+                  key={product.id}
+                  className={`absolute w-full max-w-[380px] h-auto aspect-square rounded-3xl bg-white border-2 border-gray-200 shadow-2xl overflow-hidden flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
                     index === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                }`}
-                style={{ maxHeight: '40vh' }}
-                />
+                  }`}
+                >
+                  <img 
+                    src={product.image} 
+                    alt={product.title}
+                     loading="lazy"
+                     className="w-full h-4/5 object-contain p-6"
+                  />
+                  <div className="w-full bg-gray-50 border-t border-gray-200 px-6 py-3 text-center">
+                    <p className="text-2xl font-bold text-gray-900">
+                      US ${product.price.toFixed(2)}
+                    </p>
+                  </div>
+                </div>
             ))}
         </div>
 
@@ -74,7 +83,7 @@ export default function Section1Mobile() {
       {/* Botón Principal - Abajo */}
       <div className="w-full z-10">
         <button 
-          onClick={() => navigate('/Catalogo')}
+           onClick={() => navigate('/Catalogo')}
           className="w-full py-4 bg-black text-white text-lg font-semibold rounded-full shadow-lg active:scale-[0.98] transition-transform"
         >
           View Catalog

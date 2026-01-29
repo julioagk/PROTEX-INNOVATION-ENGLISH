@@ -100,7 +100,7 @@ export default function ProductView() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-white">
-        <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin" />
+        <div className="w-12 h-12 border-4 border-gray-200 border-t-slate-600 rounded-full animate-spin" />
       </div>
     );
   }
@@ -108,9 +108,9 @@ export default function ProductView() {
   if (!product) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-        <h2 className="mb-3 text-xl font-bold text-gray-900">Producto no encontrado</h2>
+        <h2 className="mb-3 text-xl font-bold text-gray-900">Product not found</h2>
         <button className="px-5 py-3 text-white bg-black rounded-lg" onClick={() => navigate(-1)}>
-          Volver
+          Go Back
         </button>
       </div>
     );
@@ -178,15 +178,15 @@ export default function ProductView() {
   <nav className="hidden md:block mb-2 text-sm text-gray-500" aria-label="Breadcrumb">
           <ol className="flex items-center gap-2">
             <li>
-              <Link to="/" className="hover:text-blue-600">
+              <Link to="/" className="hover:text-amber-600">
                 Inicio
               </Link>
             </li>
             <li className="text-gray-400">/</li>
             <li>
-              <Link to="/Catalogo" className="hover:text-blue-600">
-                Catálogo
-              </Link>
+                <Link to="/Catalogo" className="hover:text-amber-600">
+                  Catálogo
+                </Link>
             </li>
             <li className="text-gray-400">/</li>
             <li className="font-medium text-gray-700 truncate max-w-[40ch]" title={product.title || product.nombre}>
@@ -208,7 +208,7 @@ export default function ProductView() {
                       key={idx}
                       className={`w-full aspect-square overflow-hidden rounded-lg transition-transform ${
                         idx === activeIndex
-                          ? "ring-2 ring-blue-500 scale-105"
+                          ? "ring-2 ring-slate-600 scale-105"
                           : "ring-1 ring-gray-200 hover:ring-gray-400 hover:scale-105"
                       }`}
                       onClick={() => setActiveIndex(idx)}
@@ -217,7 +217,7 @@ export default function ProductView() {
                       <img 
                         src={src} 
                         alt={`thumb-${idx + 1}`} 
-                        className="object-cover w-full h-full"
+                        className="object-contain w-full h-full bg-white p-2"
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = EMPTY_PNG;
@@ -230,7 +230,7 @@ export default function ProductView() {
 
               {/* Imagen principal */}
               <div
-                className="group relative overflow-hidden rounded-xl bg-gradient-to-b from-gray-50 to-white flex items-start justify-center w-full md:self-start md:max-h-[calc(100vh-220px)]"
+                className="group relative overflow-hidden rounded-xl bg-white border border-gray-200 flex items-center justify-center w-full md:self-start md:max-h-[calc(100vh-220px)] p-6 md:p-10"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (images.length > 1) {
@@ -242,7 +242,7 @@ export default function ProductView() {
                 <img
                   src={images[activeIndex]}
                   alt={(product.title || product.nombre) + " - imagen " + (activeIndex + 1)}
-                  className="object-contain w-full h-full max-h-full transition-transform duration-300 ease-out group-hover:scale-105"
+                  className="object-contain w-full h-full max-h-[720px] transition-transform duration-300 ease-out group-hover:scale-105"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
@@ -259,7 +259,7 @@ export default function ProductView() {
             {/* Mobile: imagen principal + tira horizontal de miniaturas abajo */}
             <div className="md:hidden flex flex-col h-full gap-3">
               <div
-                className="group relative overflow-hidden rounded-xl bg-gradient-to-b from-gray-50 to-white flex-1 flex items-start justify-center min-h-[280px]"
+                className="group relative overflow-hidden rounded-xl bg-white border border-gray-200 flex-1 flex items-center justify-center min-h-[280px] p-5"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (images.length > 1) {
@@ -271,7 +271,7 @@ export default function ProductView() {
                 <img
                   src={images[activeIndex]}
                   alt={(product.title || product.nombre) + " - imagen " + (activeIndex + 1)}
-                  className="object-contain w-full h-full max-h-full"
+                  className="object-contain w-full h-full max-h-[540px]"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
@@ -307,7 +307,7 @@ export default function ProductView() {
                       key={idx}
                       className={`flex-shrink-0 w-16 h-16 overflow-hidden rounded-md transition-all ${
                         idx === activeIndex
-                          ? "ring-2 ring-blue-500 scale-105"
+                          ? "ring-2 ring-slate-600 scale-105"
                           : "ring-1 ring-gray-200 hover:ring-gray-400"
                       }`}
                       onClick={() => setActiveIndex(idx)}
@@ -316,7 +316,7 @@ export default function ProductView() {
                       <img 
                         src={src} 
                         alt={`thumb-${idx + 1}`} 
-                        className="object-cover w-full h-full"
+                        className="object-contain w-full h-full bg-white p-2"
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = EMPTY_PNG;
@@ -332,7 +332,7 @@ export default function ProductView() {
           {/* Columna central: Descripción larga */}
           <div className="order-3 md:order-2 flex flex-col w-full h-auto md:h-full md:overflow-hidden pb-2 md:pt-1">
             <div className="pr-1 flex-1 md:overflow-auto pb-3">
-              <h2 className="mb-2 text-base font-semibold text-gray-900 md:sr-only">Descripción</h2>
+              <h2 className="mb-2 text-base font-semibold text-gray-900 md:sr-only">Description</h2>
               <p className="text-sm md:text-[15px] leading-6 md:leading-7 text-gray-800 font-normal antialiased whitespace-pre-line text-left tracking-normal">
                 {product.description || product.descripcion || ""}
               </p>
@@ -350,7 +350,7 @@ export default function ProductView() {
               <h1 className="mb-2 text-[26px] md:text-3xl font-extrabold tracking-tight text-gray-900">{product.title || product.nombre}</h1>
               <div className="mb-3">
                 <span className="text-[32px] md:text-4xl font-extrabold text-gray-900">${product.price || product.precio}</span>
-                <span className="ml-2 text-sm text-gray-500 align-super">MXN</span>
+                <span className="ml-2 text-sm text-gray-500 align-super">USD</span>
               </div>
               <div className="mt-1 text-xs text-gray-500">
                 Código: <span className="font-medium text-gray-700">{product.id}</span> ·
@@ -359,18 +359,18 @@ export default function ProductView() {
             </div>
 
             <div className="pt-3 border-t mt-2 flex-shrink-0 pb-2">
-              <div className="text-sm font-medium text-green-700">{stock > 0 ? `Stock disponible (${stock})` : "Sin stock"}</div>
+              <div className="text-sm font-medium text-teal-600">{stock > 0 ? `Stock available (${stock})` : "Out of stock"}</div>
 
               {/* Selector de cantidad */}
               <div className="mt-3 flex items-center gap-3">
-                <span className="text-sm text-gray-700">Cantidad</span>
+                <span className="text-sm text-gray-700">Quantity</span>
                 <div className="inline-flex items-center rounded-lg border border-gray-300 overflow-hidden">
                   <button
                     type="button"
                     className="px-3 py-2 text-gray-800 hover:bg-gray-100 disabled:opacity-40"
                     onClick={() => setQty((q) => Math.max(1, q - 1))}
                     disabled={qty <= 1}
-                    aria-label="Disminuir cantidad"
+                    aria-label="Decrease quantity"
                   >
                     −
                   </button>
@@ -387,7 +387,7 @@ export default function ProductView() {
                     className="px-3 py-2 text-gray-800 hover:bg-gray-100 disabled:opacity-40"
                     onClick={() => setQty((q) => Math.min((stock || 999), q + 1))}
                     disabled={stock ? qty >= stock : false}
-                    aria-label="Aumentar cantidad"
+                    aria-label="Increase quantity"
                   >
                     +
                   </button>
@@ -396,29 +396,29 @@ export default function ProductView() {
 
               <div className="mt-3 grid grid-cols-1 gap-3 mb-2">
                 <button
-                  className="w-full h-12 rounded-lg bg-[#25D366] text-white font-semibold hover:bg-[#1ebe57] hover:shadow-lg hover:shadow-green-500/30 active:scale-95 transition-all"
+                  className="w-full h-12 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 hover:shadow-lg active:scale-95 transition-all"
                   onClick={() => {
-                    const msg = `¡Hola! Quiero comprar:\n\n${product.title || product.nombre} x${qty}\nPrecio unitario: $${(product.price || product.precio)}\n\n?`;
+                    const msg = `Hello! I want to buy:\n\n${product.title || product.nombre} x${qty}\nUnit price: $${(product.price || product.precio)}\n\n?`;
                     window.open(`https://wa.me/YOUR_WHATSAPP_NUMBER?text=${encodeURIComponent(msg)}`, "_blank");
                   }}
                 >
-                  Comprar por WhatsApp
+                  Buy via WhatsApp
                 </button>
                 <button
                   className="w-full h-12 rounded-lg bg-black text-white font-semibold hover:bg-neutral-900 hover:shadow-lg hover:shadow-black/30 active:scale-95 transition-all disabled:opacity-60"
                   onClick={() => addToCart({ ...product, quantity: qty })}
                   disabled={stock === 0}
                 >
-                  {stock === 0 ? "Sin stock" : "Agregar al carrito"}
+                  {stock === 0 ? "Out of stock" : "Add to cart"}
                 </button>
                 <button
                   className="w-full h-11 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 hover:border-gray-400 hover:shadow-sm active:scale-95 transition-all"
                   onClick={() => navigate(-1)}
                 >
-                  Volver al catálogo
+                  Back to catalog
                 </button>
               </div>
-              <div className="mt-2 text-[11px] text-gray-500">Coordinamos entregas y envíos — actualiza esta información para tu tienda.</div>
+              <div className="mt-2 text-[11px] text-gray-500">We coordinate deliveries and shipments — update this information for your store.</div>
             </div>
           </aside>
         </div>

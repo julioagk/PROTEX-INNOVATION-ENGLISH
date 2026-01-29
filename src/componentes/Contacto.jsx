@@ -10,7 +10,7 @@ export default function Contacto() {
           {/* Formulario de contacto */}
           <div className="bg-white border border-gray-300 rounded-2xl p-8 shadow-2xl">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-2 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full"></span>
+              <span className="w-2 h-8 bg-gradient-to-b from-slate-700 to-slate-600 rounded-full"></span>
               Envíanos un mensaje
             </h2>
             <form className="space-y-5">
@@ -22,7 +22,7 @@ export default function Contacto() {
                   <input
                     type="text"
                     placeholder="Tu nombre"
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                     required
                   />
                 </div>
@@ -33,7 +33,7 @@ export default function Contacto() {
                   <input
                     type="email"
                     placeholder="tu@email.com"
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                     required
                   />
                 </div>
@@ -46,7 +46,7 @@ export default function Contacto() {
                 <input
                   type="tel"
                   placeholder="+52 81 1234 5678"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -57,7 +57,7 @@ export default function Contacto() {
                 <input
                   type="text"
                   placeholder="¿Sobre qué quieres hablar?"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                   required
                 />
               </div>
@@ -69,14 +69,14 @@ export default function Contacto() {
                 <textarea
                   placeholder="Cuéntanos en qué podemos ayudarte..."
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all resize-none"
                   required
                 />
               </div>
 
               <button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5"
+                className="w-full bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
               >
                 Enviar mensaje
               </button>
@@ -91,14 +91,14 @@ export default function Contacto() {
           <div className="space-y-6">
             
             {/* Tarjetas de contacto directo */}
-            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 group shadow-lg">
+            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 group shadow-lg">
               <div className="flex items-start gap-4">
-                <div className="bg-blue-500/10 p-3 rounded-lg group-hover:bg-blue-500/20 transition-all">
-                  <FaEnvelope className="w-6 h-6 text-blue-500" />
+                <div className="bg-amber-500/10 p-3 rounded-lg group-hover:bg-amber-500/20 transition-all">
+                  <FaEnvelope className="w-6 h-6 text-amber-600" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-1">Email</h3>
-                  <a href="mailto:contact@yourstore.com" className="text-gray-600 hover:text-blue-500 transition-colors">
+                  <a href="mailto:contact@yourstore.com" className="text-gray-600 hover:text-amber-600 transition-colors">
                     contact@yourstore.com
                   </a>
                   <p className="text-sm text-gray-500 mt-1">Respuesta en 24-48 horas</p>
@@ -106,14 +106,14 @@ export default function Contacto() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 group shadow-lg">
+            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-teal-600/50 transition-all duration-300 group shadow-lg">
               <div className="flex items-start gap-4">
-                <div className="bg-blue-500/10 p-3 rounded-lg group-hover:bg-blue-500/20 transition-all">
-                  <FaPhone className="w-6 h-6 text-blue-500" />
+                <div className="bg-teal-600/10 p-3 rounded-lg group-hover:bg-teal-600/20 transition-all">
+                  <FaPhone className="w-6 h-6 text-teal-600" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-1">Teléfono</h3>
-                  <a href="tel:+YOUR_PHONE_NUMBER" className="text-gray-600 hover:text-blue-500 transition-colors">
+                  <a href="tel:+YOUR_PHONE_NUMBER" className="text-gray-600 hover:text-teal-600 transition-colors">
                     +YourPhoneNumber
                   </a>
                   <p className="text-sm text-gray-500 mt-1">Lun - Sáb: 9:00am - 6:00pm</p>
@@ -121,10 +121,10 @@ export default function Contacto() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 group shadow-lg">
+            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-slate-600/50 transition-all duration-300 group shadow-lg">
               <div className="flex items-start gap-4">
-                <div className="bg-blue-500/10 p-3 rounded-lg group-hover:bg-blue-500/20 transition-all">
-                  <FaMapMarkerAlt className="w-6 h-6 text-blue-500" />
+                <div className="bg-slate-600/10 p-3 rounded-lg group-hover:bg-slate-600/20 transition-all">
+                  <FaMapMarkerAlt className="w-6 h-6 text-slate-600" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-1">Ubicación</h3>
@@ -135,9 +135,9 @@ export default function Contacto() {
             </div>
 
             {/* Horario */}
-            <div className="bg-gradient-to-br from-blue-500/10 to-transparent border border-blue-500/20 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-amber-500/10 to-transparent border border-amber-500/20 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <FaClock className="w-5 h-5 text-blue-500" />
+                <FaClock className="w-5 h-5 text-amber-600" />
                 <h3 className="text-lg font-semibold">Horario de atención</h3>
               </div>
               <div className="space-y-2 text-sm">

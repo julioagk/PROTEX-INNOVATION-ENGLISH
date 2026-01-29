@@ -3,8 +3,8 @@ export default function Empresa() {
     <section className="relative w-full min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900 pt-[15px] md:pt-[15px] pb-20 px-4 overflow-hidden">
       {/* Decorative orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(59,130,246,0.2), transparent)'}} />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(6,182,212,0.2), transparent)'}} />
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(71,85,105,0.18), transparent)'}} />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full blur-3xl" style={{background: 'radial-gradient(circle, rgba(15,118,110,0.16), transparent)'}} />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -15,7 +15,7 @@ export default function Empresa() {
             <div className="group">
               <div className="flex items-start gap-4 p-6 rounded-2xl backdrop-blur-xl border border-gray-300 bg-white/80 hover:bg-white transition-all duration-300 shadow-lg">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-slate-700">
                     <span className="text-xl">⚡</span>
                   </div>
                 </div>
@@ -29,7 +29,7 @@ export default function Empresa() {
             <div className="group">
               <div className="flex items-start gap-4 p-6 rounded-2xl backdrop-blur-xl border border-gray-300 bg-white/80 hover:bg-white transition-all duration-300 shadow-lg">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-amber-600">
                     <span className="text-xl">🎯</span>
                   </div>
                 </div>
@@ -43,7 +43,7 @@ export default function Empresa() {
             <div className="group">
               <div className="flex items-start gap-4 p-6 rounded-2xl backdrop-blur-xl border border-gray-300 bg-white/80 hover:bg-white transition-all duration-300 shadow-lg">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-teal-700">
                     <span className="text-xl">🤝</span>
                   </div>
                 </div>
@@ -58,21 +58,21 @@ export default function Empresa() {
           {/* Right: Stats */}
           <div className="space-y-6">
             <div className="backdrop-blur-xl border border-gray-300 bg-white/80 rounded-2xl p-8 hover:bg-white transition-all duration-300 shadow-lg">
-              <div className="text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mb-2">
+              <div className="text-5xl font-black text-slate-700 mb-2">
                 15+
               </div>
               <p className="text-gray-700 text-lg">Años de Experiencia</p>
             </div>
 
             <div className="backdrop-blur-xl border border-gray-300 bg-white/80 rounded-2xl p-8 hover:bg-white transition-all duration-300 shadow-lg">
-              <div className="text-5xl font-black bg-gradient-to-r from-cyan-600 to-cyan-500 bg-clip-text text-transparent mb-2">
+              <div className="text-5xl font-black text-amber-500 mb-2">
                 10K+
               </div>
               <p className="text-gray-700 text-lg">Clientes Satisfechos</p>
             </div>
 
             <div className="backdrop-blur-xl border border-gray-300 bg-white/80 rounded-2xl p-8 hover:bg-white transition-all duration-300 shadow-lg">
-              <div className="text-5xl font-black bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent mb-2">
+              <div className="text-5xl font-black text-teal-600 mb-2">
                 500+
               </div>
               <p className="text-gray-700 text-lg">Productos Disponibles</p>
@@ -86,7 +86,7 @@ export default function Empresa() {
           <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
             Explora nuestro catálogo completo y descubre por qué miles de clientes confían en nosotros.
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 active:scale-95">
+          <button className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 active:scale-95">
             Explorar Catálogo
           </button>
         </div>

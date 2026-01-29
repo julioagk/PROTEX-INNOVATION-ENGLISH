@@ -75,18 +75,18 @@ export default function Footer() {
             <h3 className="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-900 mb-3 md:mb-4">Contact</h3>
             <div className="space-y-2 md:space-y-3 flex flex-col items-start">
               <a 
-                href="mailto:contact@yourstore.com" 
+                href="mailto:Protex@gmail.com" 
                 className="flex items-center space-x-2 md:space-x-3 text-gray-600 hover:text-blue-600 transition-colors group"
               >
                 <FaEnvelope className="h-3 w-3 md:h-4 md:w-4" />
                 <span className="text-xs md:text-sm font-medium">Protex@gmail.com</span>
               </a>
               <a 
-                href="tel:+YOUR_PHONE_NUMBER" 
-                className="flex items-center space-x-2 md:space-x-3 text-gray-600 hover:text-blue-600 transition-colors group">
+                href="tel:+1234567890" 
+                className="flex items-center space-x-2 md:space-x-3 text-gray-600 hover:text-blue-600 transition-colors group"
               >
                 <FaPhone className="h-3 w-3 md:h-4 md:w-4" />
-                <span className="text-xs md:text-sm font-medium">+YourPhoneNumber</span>
+                <span className="text-xs md:text-sm font-medium">+1 (234) 567-890</span>
               </a>
             </div>
           </div>
@@ -98,15 +98,15 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Protex. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Protex. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <a href="/politica-privacidad" className="text-gray-500 hover:text-blue-500 transition-colors duration-300">
-              Política de Privacidad
+              Privacy Policy
             </a>
             <span className="text-gray-700">•</span>
             <a href="/terminos-condiciones" className="text-gray-500 hover:text-blue-500 transition-colors duration-300">
-              Términos y Condiciones
+              Terms and Conditions
             </a>
           </div>
         </div>
