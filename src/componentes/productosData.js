@@ -69,4 +69,14 @@
     price: 189.99,
     category: "interruptores-3p",
   },
+  {
+    id: 8,
+    title: "Q115 ITE SIEMENS 15 Amp 1 Pole QP Circuit Breaker",
+    description: "Plug-in 1-pole breaker, 15A 120V AC, Type QP frame for residential and light commercial load centers with thermal-magnetic protection.",
+    details: "Key specs:\n- Frame: Siemens Type QP, plug-in, 1-pole\n- Rating: 15 A, 120 V AC (120/240 V system compatible)\n- Trip: Thermal-magnetic protection\n- Application: branch circuit protection in load centers and panelboards\n- Standards: UL Listed, CSA Certified",
+    image: "/IMG%20PRODUCTS%202/Q115%20ITE%20SIEMENS%2015%20Amp%201%20Pole%20Circuit%20Breaker.png",
+    images: ["/IMG%20PRODUCTS%202/Q115%20ITE%20SIEMENS%2015%20Amp%201%20Pole%20Circuit%20Breaker.png"],
+    price: 19.99,
+    category: "interruptores-1p",
+  },
 ];

@@ -6,6 +6,7 @@ import ProductSkeleton from "./ProductSkeleton";
 
 const categories = [
   { value: "all", label: "All Products" },
+  { value: "interruptores-1p", label: "Circuit Breakers 1 Pole" },
   { value: "interruptores-2p", label: "Circuit Breakers 2 Poles" },
   { value: "interruptores-3p", label: "Circuit Breakers 3 Poles" },
 ];
