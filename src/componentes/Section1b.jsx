@@ -11,10 +11,10 @@ export default function Section1b() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Why Choose Us */}
+        {/* Por Qué Elegirnos */}
         <div className="mb-20 md:mb-24">
           <h2 className="text-3xl md:text-5xl font-black mb-16 md:mb-20 tracking-tight text-gray-900 text-center">
-            Why Trust <span className="text-sky-600">Us</span>
+            Why <span className="text-sky-600">Choose Us</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
@@ -23,9 +23,9 @@ export default function Section1b() {
               <div className="mb-6 p-5 rounded-xl bg-sky-600/10 group-hover:bg-sky-600/20 transition-colors">
                 <CheckCircleIcon className="w-10 h-10 md:w-12 md:h-12 text-sky-600" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Quality Assured</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Certified & Compliant</h3>
               <p className="text-gray-600 leading-relaxed text-base">
-                All products meet international standards for electrical safety and reliability. We work exclusively with certified manufacturers.
+                All products meet IEC international standards and local regulations. We exclusively distribute from audited and certified manufacturers with verified credentials.
               </p>
             </div>
 
@@ -34,9 +34,9 @@ export default function Section1b() {
               <div className="mb-6 p-5 rounded-xl bg-slate-700/10 group-hover:bg-slate-700/20 transition-colors">
                 <ShieldCheckIcon className="w-10 h-10 md:w-12 md:h-12 text-slate-700" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Expert Support</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Engineering Support</h3>
               <p className="text-gray-600 leading-relaxed text-base">
-                Our technical team is available to help you select the right equipment for your specific project requirements. We provide guidance and support.
+                Our engineering team provides technical specifications, product selection guidance, and troubleshooting for commercial and industrial projects at any scale.
               </p>
             </div>
 
@@ -45,9 +45,9 @@ export default function Section1b() {
               <div className="mb-6 p-5 rounded-xl bg-teal-600/10 group-hover:bg-teal-600/20 transition-colors">
                 <SparklesIcon className="w-10 h-10 md:w-12 md:h-12 text-teal-600" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Competitive Pricing</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">Direct Distribution</h3>
               <p className="text-gray-600 leading-relaxed text-base">
-                Direct distribution partnerships allow us to offer the best prices without compromising on product quality or service.
+                As direct distributors for major manufacturers, we deliver competitive pricing without compromising on quality, warranty, or post-sale support.
               </p>
             </div>
           </div>
