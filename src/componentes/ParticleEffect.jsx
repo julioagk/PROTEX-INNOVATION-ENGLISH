@@ -30,16 +30,16 @@ export default function ParticleEffect({ isActive }) {
         this.opacity = 1;
         this.decay = Math.random() * 0.012 + 0.008;
         
-        // Colores más vibrantes tipo explosión
+        // Colores fríos acordes a la paleta (azules/cyan)
         const rand = Math.random();
         if (rand < 0.25) {
-          this.color = '#FF6B00'; // Naranja intenso
+          this.color = '#0EA5E9'; // Azul cielo (primary)
         } else if (rand < 0.5) {
-          this.color = '#FFD700'; // Dorado
+          this.color = '#38BDF8'; // Cyan claro (accent)
         } else if (rand < 0.75) {
-          this.color = '#FF4500'; // Rojo naranja
+          this.color = '#7DD3FC'; // Cyan suave
         } else {
-          this.color = '#FFA500'; // Naranja
+          this.color = '#1E40AF'; // Azul profundo para contraste
         }
       }
 

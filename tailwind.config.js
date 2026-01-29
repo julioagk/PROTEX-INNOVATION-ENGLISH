@@ -2,19 +2,19 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
     content: [
-        "./src/**/*/.{js,jsx,ts,tsx}",
+        "./src/**/*.{js,jsx,ts,tsx}",
     ],
     theme: {
         extend: {
             colors: {
-                richblack: '#010101',
-                primary: '#2563EB', /* Azul profesional moderno */
-                secondary: '#7C3AED', /* Púrpura acento */
-                accent: '#F97316', /* Naranja energético */
-                text: '#1F2937', /* Gris oscuro para texto */
-                'text-light': '#6B7280', /* Gris claro para texto secundario */
-                'bg-light': '#F9FAFB', /* Fondo muy claro */
-                'border-color': '#E5E7EB', /* Bordes sutiles */
+                richblack: '#0f172a',
+                primary: '#0EA5E9', // azul cielo moderno
+                secondary: '#1E293B', // gris azulado profundo
+                accent: '#38BDF8', // acento azul claro (sin naranja)
+                text: '#0F172A', // texto principal
+                'text-light': '#475569', // texto secundario
+                'bg-light': '#F8FAFC', // fondo claro
+                'border-color': '#E2E8F0', // borde suave
             }
         },
         
@@ -25,12 +25,6 @@ module.exports = {
             addUtilities({
                 '.text-shadow': {
                     textShadow: '2px 2px 4px rgba(0,0, 0, 0.4,)',
-                },
-                '.gradient-primary': {
-                    background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
-                },
-                '.gradient-accent': {
-                    background: 'linear-gradient(135deg, #F97316 0%, #F59E0B 100%)',
                 }
             })
         })

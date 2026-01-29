@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCart } from "./CarContext";
+import { useToast } from "./Toast";
 import { products as localProducts } from "./productosData";
 import EMPTY_PNG from "../emptyImage";
 
@@ -9,6 +10,7 @@ export default function ProductView() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { addToast } = useToast();
 
   // Permitir forzar datos locales para pruebas: /producto/:id?local=1
   const forceLocal = (() => {
@@ -116,7 +118,6 @@ export default function ProductView() {
     );
   }
 
-  const stock = 12; // Opcional: reemplazar por product.stock si existe
   // Normalizar galería de imágenes con tolerancia a distintos formatos/campos
   const normalizeToArray = (val) => {
     if (!val) return [];
@@ -170,7 +171,7 @@ export default function ProductView() {
   const images = Array.from(new Set([primary, ...imagesGathered].filter(Boolean)));
 
   return (
-  <section className="relative flex flex-col items-center min-h-screen md:h-screen px-3 md:px-4 pt-4 md:pt-16 pb-10 md:pb-6 bg-white md:overflow-hidden">
+  <section className="relative flex flex-col items-center min-h-screen px-3 md:px-4 pt-4 md:pt-16 pb-10 md:pb-8 bg-white">
   {/* Fondo blanco ya forzado en html/body/root desde efecto; sin capa fija para evitar 'algo blanco' tapando */}
   <div className="w-full max-w-7xl h-full flex flex-col pb-4">
       
@@ -178,13 +179,13 @@ export default function ProductView() {
   <nav className="hidden md:block mb-2 text-sm text-gray-500" aria-label="Breadcrumb">
           <ol className="flex items-center gap-2">
             <li>
-              <Link to="/" className="hover:text-amber-600">
+              <Link to="/" className="hover:text-sky-600">
                 Inicio
               </Link>
             </li>
             <li className="text-gray-400">/</li>
             <li>
-                <Link to="/Catalogo" className="hover:text-amber-600">
+                <Link to="/Catalogo" className="hover:text-sky-600">
                   Catálogo
                 </Link>
             </li>
@@ -195,7 +196,7 @@ export default function ProductView() {
           </ol>
         </nav>
 
-  <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-6 flex-1 md:overflow-hidden">
+  <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-6 flex-1">
     {/* Columna izquierda: Galería profesional - miniaturas al lateral izquierdo + imagen principal */}
           <div className="flex flex-col h-auto md:h-full gap-3 order-1 md:pt-1">
             {/* Desktop: imagen grande al lado izquierdo + grid de miniaturas derecho */}
@@ -230,7 +231,7 @@ export default function ProductView() {
 
               {/* Imagen principal */}
               <div
-                className="group relative overflow-hidden rounded-xl bg-white border border-gray-200 flex items-center justify-center w-full md:self-start md:max-h-[calc(100vh-220px)] p-6 md:p-10"
+                className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center w-full md:self-start md:max-h-[72vh] p-6 md:p-10"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (images.length > 1) {
@@ -242,7 +243,7 @@ export default function ProductView() {
                 <img
                   src={images[activeIndex]}
                   alt={(product.title || product.nombre) + " - imagen " + (activeIndex + 1)}
-                  className="object-contain w-full h-full max-h-[720px] transition-transform duration-300 ease-out group-hover:scale-105"
+                  className="object-contain w-full max-h-[70vh] h-auto transition-transform duration-300 ease-out group-hover:scale-105"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
@@ -271,7 +272,7 @@ export default function ProductView() {
                 <img
                   src={images[activeIndex]}
                   alt={(product.title || product.nombre) + " - imagen " + (activeIndex + 1)}
-                  className="object-contain w-full h-full max-h-[540px]"
+                  className="object-contain w-full max-h-[60vh] h-auto"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
@@ -330,8 +331,8 @@ export default function ProductView() {
           </div>
 
           {/* Columna central: Descripción larga */}
-          <div className="order-3 md:order-2 flex flex-col w-full h-auto md:h-full md:overflow-hidden pb-2 md:pt-1">
-            <div className="pr-1 flex-1 md:overflow-auto pb-3">
+          <div className="order-3 md:order-2 flex flex-col w-full h-auto md:h-full pb-2 md:pt-1">
+            <div className="pr-1 flex-1 pb-3">
               <h2 className="mb-2 text-base font-semibold text-gray-900 md:sr-only">Description</h2>
               <p className="text-sm md:text-[15px] leading-6 md:leading-7 text-gray-800 font-normal antialiased whitespace-pre-line text-left tracking-normal">
                 {product.description || product.descripcion || ""}
@@ -345,8 +346,8 @@ export default function ProductView() {
           </div>
 
           {/* Columna derecha: Título, precio y acciones */}
-          <aside className="order-2 md:order-3 flex flex-col justify-between w-full h-auto md:h-full md:overflow-hidden pb-2 md:pt-1">
-            <div className="pr-1 flex-1 md:overflow-auto pb-3 text-left">
+          <aside className="order-2 md:order-3 flex flex-col justify-between w-full h-auto md:h-full pb-2 md:pt-1">
+            <div className="pr-1 flex-1 pb-3 text-left">
               <h1 className="mb-2 text-[26px] md:text-3xl font-extrabold tracking-tight text-gray-900">{product.title || product.nombre}</h1>
               <div className="mb-3">
                 <span className="text-[32px] md:text-4xl font-extrabold text-gray-900">${product.price || product.precio}</span>
@@ -359,8 +360,6 @@ export default function ProductView() {
             </div>
 
             <div className="pt-3 border-t mt-2 flex-shrink-0 pb-2">
-              <div className="text-sm font-medium text-teal-600">{stock > 0 ? `Stock available (${stock})` : "Out of stock"}</div>
-
               {/* Selector de cantidad */}
               <div className="mt-3 flex items-center gap-3">
                 <span className="text-sm text-gray-700">Quantity</span>
@@ -379,14 +378,14 @@ export default function ProductView() {
                     value={qty}
                     onChange={(e) => {
                       const v = parseInt(e.target.value, 10);
-                      if (!Number.isNaN(v)) setQty(Math.max(1, Math.min(v, stock || 999)));
+                      if (!Number.isNaN(v)) setQty(Math.max(1, Math.min(v, 999)));
                     }}
                   />
                   <button
                     type="button"
                     className="px-3 py-2 text-gray-800 hover:bg-gray-100 disabled:opacity-40"
-                    onClick={() => setQty((q) => Math.min((stock || 999), q + 1))}
-                    disabled={stock ? qty >= stock : false}
+                    onClick={() => setQty((q) => Math.min(999, q + 1))}
+                    disabled={qty >= 999}
                     aria-label="Increase quantity"
                   >
                     +
@@ -396,20 +395,22 @@ export default function ProductView() {
 
               <div className="mt-3 grid grid-cols-1 gap-3 mb-2">
                 <button
-                  className="w-full h-12 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 hover:shadow-lg active:scale-95 transition-all"
+                  className="w-full h-12 rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700 hover:shadow-lg active:scale-95 transition-all"
                   onClick={() => {
                     const msg = `Hello! I want to buy:\n\n${product.title || product.nombre} x${qty}\nUnit price: $${(product.price || product.precio)}\n\n?`;
-                    window.open(`https://wa.me/YOUR_WHATSAPP_NUMBER?text=${encodeURIComponent(msg)}`, "_blank");
+                    window.open(`https://wa.me/17132015742?text=${encodeURIComponent(msg)}`, "_blank");
                   }}
                 >
                   Buy via WhatsApp
                 </button>
                 <button
                   className="w-full h-12 rounded-lg bg-black text-white font-semibold hover:bg-neutral-900 hover:shadow-lg hover:shadow-black/30 active:scale-95 transition-all disabled:opacity-60"
-                  onClick={() => addToCart({ ...product, quantity: qty })}
-                  disabled={stock === 0}
+                  onClick={() => {
+                    addToCart({ ...product, quantity: qty });
+                    addToast(`✅ ${product.title || product.nombre} agregado al carrito`, 'success');
+                  }}
                 >
-                  {stock === 0 ? "Out of stock" : "Add to cart"}
+                  Add to cart
                 </button>
                 <button
                   className="w-full h-11 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 hover:border-gray-400 hover:shadow-sm active:scale-95 transition-all"

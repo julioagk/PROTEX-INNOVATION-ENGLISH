@@ -4,19 +4,6 @@
   text-align: center;
 }
 
-/* Color palette mapping for new theme */
-:root {
-  --primary: #2563EB;
-  --primary-hover: #1D4ED8;
-  --secondary: #7C3AED;
-  --accent: #F97316;
-  --accent-light: #F59E0B;
-  --text-dark: #1F2937;
-  --text-light: #6B7280;
-  --bg-light: #F9FAFB;
-  --border-color: #E5E7EB;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -24,10 +11,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #2563EBaa);
+  filter: drop-shadow(0 0 2em #0EA5E9aa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #7C3AEDaa);
+  filter: drop-shadow(0 0 2em #1E293Baa);
 }
 
 @keyframes fadeInLorang {

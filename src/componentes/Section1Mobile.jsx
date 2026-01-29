@@ -25,7 +25,7 @@ export default function Section1Mobile() {
           New Collection
         </h2>
         <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
-          Protex Innovation
+          Electrical Protection
         </h1>
         <p className="text-lg text-gray-600 max-w-[280px]">
           Professional electrical protection.
@@ -34,7 +34,7 @@ export default function Section1Mobile() {
         {/* Enlace de texto simple */}
         <button 
            onClick={() => navigate('/Catalogo')}
-          className="mt-2 text-amber-600 font-medium hover:text-amber-700 flex items-center gap-1"
+          className="mt-2 text-sky-600 font-medium hover:text-sky-700 flex items-center gap-1"
         >
           Shop now <span aria-hidden="true">&rarr;</span>
         </button>

@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaFacebook, FaInstagram, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 export default function Contacto() {
   return (
@@ -11,17 +11,17 @@ export default function Contacto() {
           <div className="bg-white border border-gray-300 rounded-2xl p-8 shadow-2xl">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <span className="w-2 h-8 bg-gradient-to-b from-slate-700 to-slate-600 rounded-full"></span>
-              Envíanos un mensaje
+              Send us a message
             </h2>
             <form className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Nombre completo
+                    Full Name
                   </label>
                   <input
                     type="text"
-                    placeholder="Tu nombre"
+                    placeholder="Your name"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                     required
                   />
@@ -32,7 +32,7 @@ export default function Contacto() {
                   </label>
                   <input
                     type="email"
-                    placeholder="tu@email.com"
+                    placeholder="you@email.com"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                     required
                   />
@@ -41,22 +41,22 @@ export default function Contacto() {
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Teléfono
+                  Phone
                 </label>
                 <input
                   type="tel"
-                  placeholder="+52 81 1234 5678"
+                  placeholder="+1 (713) 201-5742"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Asunto
+                  Subject
                 </label>
                 <input
                   type="text"
-                  placeholder="¿Sobre qué quieres hablar?"
+                  placeholder="What would you like to talk about?"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                   required
                 />
@@ -64,10 +64,10 @@ export default function Contacto() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Mensaje
+                  Message
                 </label>
                 <textarea
-                  placeholder="Cuéntanos en qué podemos ayudarte..."
+                  placeholder="Tell us how we can help..."
                   rows={5}
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all resize-none"
                   required
@@ -78,11 +78,11 @@ export default function Contacto() {
                 type="submit"
                 className="w-full bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
               >
-                Enviar mensaje
+                Send message
               </button>
               
               <p className="text-sm text-gray-600 text-center">
-                Te responderemos lo antes posible
+                We'll get back to you as soon as possible
               </p>
             </form>
           </div>
@@ -91,17 +91,19 @@ export default function Contacto() {
           <div className="space-y-6">
             
             {/* Tarjetas de contacto directo */}
-            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 group shadow-lg">
+            <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-300 rounded-2xl p-6 hover:border-sky-500/50 transition-all duration-300 group shadow-lg">
               <div className="flex items-start gap-4">
-                <div className="bg-amber-500/10 p-3 rounded-lg group-hover:bg-amber-500/20 transition-all">
-                  <FaEnvelope className="w-6 h-6 text-amber-600" />
+                <div className="bg-sky-500/10 p-3 rounded-lg group-hover:bg-sky-500/20 transition-all">
+                  <FaEnvelope className="w-6 h-6 text-sky-600" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-1">Email</h3>
-                  <a href="mailto:contact@yourstore.com" className="text-gray-600 hover:text-amber-600 transition-colors">
-                    contact@yourstore.com
+                  <a href="mailto:info_sales@protexinnovations.com" className="text-gray-600 hover:text-sky-600 transition-colors">
+                    info_sales@protexinnovations.com
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Respuesta en 24-48 horas</p>
+                  <a href="mailto:lesly@protexinnovations.com" className="text-gray-600 hover:text-sky-600 transition-colors block mt-2">
+                    lesly@protexinnovations.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -112,11 +114,14 @@ export default function Contacto() {
                   <FaPhone className="w-6 h-6 text-teal-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold mb-1">Teléfono</h3>
-                  <a href="tel:+YOUR_PHONE_NUMBER" className="text-gray-600 hover:text-teal-600 transition-colors">
-                    +YourPhoneNumber
+                  <h3 className="text-lg font-semibold mb-1">Phone</h3>
+                  <a href="tel:+17132015742" className="text-gray-600 hover:text-teal-600 transition-colors">
+                    +1 (713) 201-5742
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Lun - Sáb: 9:00am - 6:00pm</p>
+                  <a href="tel:+17139317058" className="text-gray-600 hover:text-teal-600 transition-colors block mt-2">
+                    +1 (713) 931-7058
+                  </a>
+                  <p className="text-sm text-gray-500 mt-1">Mon - Fri: 9:00am - 5:00pm | Sat: 9:00am - 2:00pm</p>
                 </div>
               </div>
             </div>
@@ -127,66 +132,28 @@ export default function Contacto() {
                   <FaMapMarkerAlt className="w-6 h-6 text-slate-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold mb-1">Ubicación</h3>
-                  <p className="text-gray-600">Monterrey, Nuevo León</p>
-                  <p className="text-sm text-gray-500 mt-1">México</p>
+                  <h3 className="text-lg font-semibold mb-1">Location</h3>
+                  <p className="text-gray-600">Houston, Texas</p>
+                  <p className="text-sm text-gray-500 mt-1">USA</p>
                 </div>
               </div>
             </div>
 
             {/* Horario */}
-            <div className="bg-gradient-to-br from-amber-500/10 to-transparent border border-amber-500/20 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-sky-500/10 to-transparent border border-sky-500/20 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <FaClock className="w-5 h-5 text-amber-600" />
-                <h3 className="text-lg font-semibold">Horario de atención</h3>
+                <FaClock className="w-5 h-5 text-sky-600" />
+                <h3 className="text-lg font-semibold">Business Hours</h3>
               </div>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Lunes - Viernes</span>
-                  <span className="text-gray-900 font-medium">9:00am - 6:00pm</span>
+                  <span className="text-gray-600">Monday - Friday</span>
+                  <span className="text-gray-900 font-medium">9:00am - 5:00pm</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Sábado</span>
-                  <span className="text-gray-900 font-medium">10:00am - 2:00pm</span>
+                  <span className="text-gray-600">Saturday</span>
+                  <span className="text-gray-900 font-medium">9:00am - 2:00pm</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Domingo</span>
-                  <span className="text-gray-500">Cerrado</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Redes sociales */}
-            <div className="bg-white border border-gray-300 rounded-2xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold mb-4">Síguenos en redes</h3>
-              <div className="grid grid-cols-3 gap-3">
-                <a 
-                  href="https://wa.me/YOUR_WHATSAPP_NUMBER" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl hover:bg-green-500/10 border border-gray-300 hover:border-green-500 transition-all group"
-                >
-                  <FaWhatsapp className="w-7 h-7 text-green-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-gray-600 group-hover:text-green-500">WhatsApp</span>
-                </a>
-                <a 
-                  href="https://facebook.com/YOUR_PAGE" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl hover:bg-blue-500/10 border border-gray-300 hover:border-blue-500 transition-all group"
-                >
-                  <FaFacebook className="w-7 h-7 text-blue-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-gray-600 group-hover:text-blue-500">Facebook</span>
-                </a>
-                <a 
-                  href="https://instagram.com/YOUR_INSTAGRAM" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl hover:bg-pink-500/10 border border-gray-300 hover:border-pink-500 transition-all group"
-                >
-                  <FaInstagram className="w-7 h-7 text-pink-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-gray-600 group-hover:text-pink-500">Instagram</span>
-                </a>
               </div>
             </div>
 

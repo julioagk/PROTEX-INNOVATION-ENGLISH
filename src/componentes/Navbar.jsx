@@ -43,6 +43,13 @@ export default function Navbar() {
 
   // Calcular total $
   const totalPrice = cart.reduce((acc, item) => acc + (item.price || item.precio) * item.quantity, 0);
+  
+  // Calculate tax (8.25% for Texas sales tax)
+  const IVA_RATE = 0.0825;
+  const ivaAmount = parseFloat((totalPrice * IVA_RATE).toFixed(2));
+  const subtotal = parseFloat(totalPrice.toFixed(2));
+  const shippingCost = cart.length > 0 ? 9.99 : 0; // Costo fijo de envío
+  const totalWithIVA = parseFloat((subtotal + ivaAmount + shippingCost).toFixed(2));
 
   const isLightPage = location.pathname.startsWith('/Catalogo') || location.pathname.startsWith('/producto');
   const navLinkClass = "text-white text-lg md:text-xl font-semibold tracking-wide transition-colors duration-200 relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-8 hover:text-gray-100";
@@ -70,12 +77,9 @@ export default function Navbar() {
           <a href="/" className="flex items-center text-2xl font-semibold overflow-hidden">
             <div className="w-14 h-14 flex items-center justify-center overflow-hidden">
                 <div className="transition-transform duration-700 ease-out" style={{ animationDelay: '0.2s' }}>
-                <img src={logo} alt="Protex" className="w-14 h-14 object-contain" />
+                <img src={logo} alt="Logo" className="w-14 h-14 object-contain" />
               </div>
             </div>
-            <span className={logoTextClass} style={{ animationDelay: '0.7s' }}>
-              Protex Innovation
-            </span>
           </a>
         </div>
         {/* Desktop Menu (hidden on mobile) */}
@@ -85,12 +89,12 @@ export default function Navbar() {
             <Link to="/Catalogo" className={navLinkClass}>Products</Link>
             <Link to="/Empresa" className={navLinkClass}>About</Link>
             <Link to="/Contacto" className={navLinkClass}>Contact</Link>
-            <button className="relative" onClick={() => setCartOpen(true)} aria-label="Carrito">
+            <button className="relative" onClick={() => setCartOpen(true)} aria-label="Shopping Cart">
               <svg xmlns="http://www.w3.org/2000/svg" className={desktopCartIconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h10a1 1 0 00.95-.68L21 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-amber-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
+                <span className="absolute -top-2 -right-2 w-4 h-4 bg-sky-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
               )}
             </button>
           </div>
@@ -112,7 +116,7 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007 17h10a1 1 0 00.95-.68L21 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 w-4 h-4 bg-amber-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
+                <span className="absolute -top-2 -right-2 w-4 h-4 bg-sky-600 text-white text-xs font-bold rounded-full flex items-center justify-center text-[10px]">{totalItems}</span>
               )}
             </button>
           </div>
@@ -166,26 +170,26 @@ export default function Navbar() {
                       <span className="ml-2 text-xs text-gray-500">x{item.quantity}</span>
                     )}
                   </span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <button
-                      className="px-2 py-1 text-sm bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
+                      className="px-2 py-1 text-xs bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
                       onClick={() => removeFromCart(item.id)}
-                      title="Quitar uno"
+                      title="Remove one"
                     >
                       −
                     </button>
-                    <span className="px-2 text-lg font-bold text-gray-900">{item.quantity}</span>
+                    <span className="px-2 text-sm font-bold text-gray-900">{item.quantity}</span>
                     <button
-                      className="px-2 py-1 text-sm bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
+                      className="px-2 py-1 text-xs bg-slate-600 hover:bg-slate-700 text-white rounded transition-colors"
                       onClick={() => addToCart({ ...item, quantity: 1 })}
-                      title="Agregar uno"
+                      title="Add one"
                     >
                       +
                     </button>
-                    <span className="font-bold text-amber-600">${(item.price || item.precio) * item.quantity}</span>
+                    <span className="font-bold text-sky-600 text-sm">${((item.price || item.precio) * item.quantity).toFixed(2)}</span>
                     {/* Botón para quitar todos */}
                     <button
-                      className="px-2 py-1 text-sm bg-red-700 hover:bg-red-600 text-white rounded transition-colors"
+                      className="px-1 py-1 text-xs bg-red-700 hover:bg-red-600 text-white rounded transition-colors"
                       onClick={() => {
                         removeAllFromCart(item.id);
                         addToast(`${item.title || item.nombre} eliminado del carrito`, 'info');
@@ -194,7 +198,7 @@ export default function Navbar() {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-4 h-4"
+                        className="w-3 h-3"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -214,22 +218,38 @@ export default function Navbar() {
           )}
           {cart.length > 0 && (
             <>
-              <div className="flex items-center justify-between mt-4 mb-2 font-bold text-gray-900">
-                <span>Total:</span>
-                <span>${totalPrice}</span>
+              <div className="mt-4 space-y-2 border-t pt-3 text-sm">
+                <div className="flex justify-between text-gray-700">
+                  <span>Tax (8.25%):</span>
+                  <span className="font-semibold text-sky-600">${ivaAmount.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between text-gray-700">
+                  <span>Shipping:</span>
+                  <span className="font-semibold">$9.99</span>
+                </div>
+                <div className="flex justify-between font-bold text-gray-900 text-base border-t pt-2">
+                  <span>Total:</span>
+                  <span className="text-sky-600">${totalWithIVA.toFixed(2)}</span>
+                </div>
               </div>
               <a
-                className="w-full mt-2 px-4 py-2 h-11 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-all text-center flex items-center justify-center hover:shadow-lg active:scale-95"
-                href={`https://wa.me/YOUR_WHATSAPP_NUMBER?text=${encodeURIComponent(
-                  `¡Hola! Quiero comprar:\n\n${cart
-                    .map((item, i) => `${i + 1}. ${(item.title || item.nombre)} x${item.quantity} - $${(item.price || item.precio) * item.quantity}`)
-                    .join("\n")}\n\nTotal: $${totalPrice}`
+                className="w-full mt-3 px-4 py-3 h-12 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-lg transition-all text-center flex items-center justify-center hover:shadow-lg active:scale-95"
+                href={`https://wa.me/17132015742?text=${encodeURIComponent(
+                  `Hi! I want to make a purchase:\n\n${cart
+                    .map((item, i) => `${i + 1}. ${(item.title || item.nombre)} x${item.quantity} - $${((item.price || item.precio) * item.quantity).toFixed(2)}`)
+                    .join("\n")}\n\n═════════════════\nSubtotal: $${subtotal.toFixed(2)}\nTax (8.25%): $${ivaAmount.toFixed(2)}\nShipping: $9.99\n═════════════════\n💰 TOTAL: $${totalWithIVA.toFixed(2)}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Buy via WhatsApp
+                💬 Contact on WhatsApp
               </a>
+              <button
+                className="w-full mt-2 px-4 py-2 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all text-sm"
+                onClick={() => setCartOpen(false)}
+              >
+                Keep Shopping
+              </button>
             </>
           )}
         </div>

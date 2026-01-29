@@ -1,66 +1,53 @@
 # 🎨 Paleta de Colores - Protex Innovation
 
-**ESTADO ACTUAL**: Nueva paleta moderna y profesional implementada.
+**ESTADO ACTUAL**: Paleta original restaurada. Colores de Schneider (verde) removidos.
 
 ## Colores Principales
 
-### 1. **BLUE (Azul Profesional)** - Primario
-- **Hex**: `#2563EB`
-- **Uso**: Elementos principales, botones primarios, fondos, iconos, navbar, links
-- **Aplicaciones**:
-  - Botones principales
-  - Navbar principal
-  - Links importantes
-  - Focus rings
-  - Elementos destacados
+### 1. **SLATE (Gris Azulado)** - Primario
+- **Uso**: Elementos principales, botones primarios, fondos, iconos, navbar
+- **Tonos**:
+  - `slate-700` - Oscuro (botones, backgrounds, navbar)
+  - `slate-600` - Medio (hovers, borders, focus rings)
+  - `slate-500` - Claro (detalles)
+  - `slate-400` - Muy claro (texto)
+
+**Ejemplos**:
+- Botones principales
+- Fondos de cards
+- Iconos
+- Focus rings
+- Navbar principal
 
 ---
 
-### 2. **PURPLE (Púrpura)** - Acento Secundario
-- **Hex**: `#7C3AED`
-- **Uso**: Elementos secundarios, highlights, hover states
-- **Aplicaciones**:
-  - Botones secundarios
-  - Hover en elementos primarios
-  - Gradientes combinados
-  - Badges especiales
-  - Efectos visuales
+### 2. **AMBER (Naranja Cálido)** - Acento Principal
+- **Uso**: Destacados, badges, precios, CTAs, links importantes
+- **Tonos**:
+  - `amber-600` - Oscuro (badges, botones)
+  - `amber-500` - Medio (texto, acentos, títulos)
+  - `amber-400` - Claro (estadísticas)
+
+**Ejemplos**:
+- Badge de precios en productos
+- Badge de cantidad en carrito
+- Colores de acento en headings
+- Hovers en enlaces
+- Botones de WhatsApp
+- Links de llamada a acción
 
 ---
 
-### 3. **ORANGE (Naranja Energético)** - Acento Principal
-- **Hex**: `#F97316`
-- **Uso**: CTAs, badges, destacados, acciones urgentes
-- **Aplicaciones**:
-  - Botones de acción
-  - Badge de precios
-  - Alertas y notificaciones
-  - WhatsApp y redes sociales
-  - Llamadas a la acción
+### 3. **TEAL (Verde Gris/Azulado)** - Secundario
+- **Uso**: Elementos secundarios, alternancia de colores, éxito
+- **Tonos**:
+  - `teal-700` - Oscuro (backgrounds)
+  - `teal-600` - Medio (iconos, textos)
+  - `teal-400` - Claro (estadísticas)
 
----
-
-### 4. **GRAY (Grises Neutros)**
-- **Oscuro (Texto)**: `#1F2937`
-- **Medio (Texto secundario)**: `#6B7280`
-- **Claro (Fondos)**: `#F9FAFB`
-- **Bordes**: `#E5E7EB`
-
----
-
-## Gradientes Predefinidos
-
-### Gradiente Primario
-```css
-background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
-```
-Uso: `.gradient-primary`
-
-### Gradiente Acento
-```css
-background: linear-gradient(135deg, #F97316 0%, #F59E0B 100%);
-```
-Uso: `.gradient-accent`
+**Ejemplos**:
+- Algunos cards en Section1 (alternancia)
+- Algunos cards en Section2 (categorías)
 - Orbs de fondo (teal-700/20)
 - Estadísticas en Section3
 - Mensajes de éxito (toasts)

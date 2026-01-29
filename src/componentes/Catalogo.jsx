@@ -107,8 +107,8 @@ export default function Catalogo() {
                   onClick={() => handleCategoryChange(cat.value)}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
                     category === cat.value
-                      ? 'bg-amber-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 border border-gray-300 hover:border-amber-600 hover:text-amber-600'
+                      ? 'bg-sky-600 text-white shadow-lg'
+                      : 'bg-white text-gray-700 border border-gray-300 hover:border-sky-600 hover:text-sky-600'
                   }`}
                 >
                   {cat.label}
@@ -152,7 +152,7 @@ export default function Catalogo() {
 
               <button
                 onClick={clearFilters}
-                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:border-amber-600 hover:text-amber-600 font-semibold transition-colors"
+                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:border-sky-600 hover:text-sky-600 font-semibold transition-colors"
               >
                 Clear filters
               </button>
@@ -210,7 +210,7 @@ export default function Catalogo() {
                   }}
                 />
                 {/* Badge de precio */}
-                <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1.5 font-bold text-sm rounded-lg shadow-md">
+                <div className="absolute top-3 right-3 bg-sky-600 text-white px-3 py-1.5 font-bold text-sm rounded-lg shadow-md">
                   ${product.price || product.precio}
                 </div>
               </div>

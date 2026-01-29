@@ -28,9 +28,9 @@ const categories = [
     label: 'Circuit Breakers 3P',
     icon: BoltIcon,
     colorClasses: {
-      bg: 'bg-amber-600',
-      text: 'text-amber-600',
-      groupHoverBg: 'group-hover:bg-amber-600',
+      bg: 'bg-sky-600',
+      text: 'text-sky-600',
+      groupHoverBg: 'group-hover:bg-sky-600',
       groupHoverText: 'group-hover:text-white'
     },
     description: 'Industrial three pole switches'
@@ -50,7 +50,7 @@ export default function Section2() {
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-4xl md:text-6xl font-black mb-4 md:mb-6 tracking-tight text-gray-900">
-            Our <span className="text-amber-500">Categories</span>
+            Our <span className="text-sky-600">Categories</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto px-2">
             Explore our departments and find exactly what you need for your electrical projects
@@ -65,7 +65,7 @@ export default function Section2() {
               <Link
                 key={category.id}
                 to={`/Catalogo?category=${category.id}`}
-                className="group relative overflow-hidden rounded-2xl backdrop-blur-xl border border-gray-200 bg-white hover:bg-white transition-all duration-300 hover:scale-[1.02] md:hover:scale-105 hover:border-amber-500 shadow-sm hover:shadow-xl"
+                className="group relative overflow-hidden rounded-2xl backdrop-blur-xl border border-gray-200 bg-white hover:bg-white transition-all duration-300 hover:scale-[1.02] md:hover:scale-105 hover:border-sky-500 shadow-sm hover:shadow-xl"
               >
                 {/* Background gradient */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${category.colorClasses.bg}`} />
@@ -78,7 +78,7 @@ export default function Section2() {
                   </div>
 
                   {/* Text */}
-                  <h3 className="text-base md:text-xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-amber-500 transition-all duration-300 leading-tight">
+                  <h3 className="text-base md:text-xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-sky-600 transition-all duration-300 leading-tight">
                     {category.label}
                   </h3>
                   <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 flex-grow line-clamp-2">
@@ -86,7 +86,7 @@ export default function Section2() {
                   </p>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-1 md:gap-2 text-amber-500 font-medium text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300 mt-auto">
+                  <div className="flex items-center gap-1 md:gap-2 text-sky-600 font-medium text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300 mt-auto">
                     <span>View</span>
                     <ChevronRightIcon className="w-3 h-3 md:w-4 md:h-4" />
                   </div>

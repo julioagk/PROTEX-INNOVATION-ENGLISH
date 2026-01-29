@@ -18,17 +18,8 @@ html, body, #root {
   }
 
 body, #root {
-  background-color: #F9FAFB;
-  color: #1F2937;
-}
-
-/* Global color theme mapping */
-:root {
-  --color-primary: #2563EB;
-  --color-secondary: #7C3AED;
-  --color-accent: #F97316;
-  --color-text-dark: #1F2937;
-  --color-text-light: #6B7280;
+  background-color: #F8FAFC;
+  color: #0F172A;
 }
 
 /* Ocultar el footer en la vista de producto (layout sin scroll ni barra inferior oscura) */
