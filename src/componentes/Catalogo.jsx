@@ -202,8 +202,8 @@ export default function Catalogo() {
                   src={resolveImageSrc(product.image || product.imagen)}
                   alt={product.title || product.nombre}
                   loading="lazy"
-                  className="object-contain w-full h-full p-8 transition-transform duration-300 group-hover:scale-110 brightness-105"
-                  style={{ imageRendering: '-webkit-optimize-contrast', maxWidth: '100%', maxHeight: '100%', filter: 'brightness(1.05) contrast(0.98)' }}
+                  className="object-contain w-[85%] h-[85%] transition-transform duration-300 group-hover:scale-105"
+                  style={{ imageRendering: '-webkit-optimize-contrast', filter: 'brightness(1.05) contrast(0.98)' }}
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
