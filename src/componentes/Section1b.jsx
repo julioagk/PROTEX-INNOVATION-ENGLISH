@@ -61,19 +61,19 @@ export default function Section1b() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="text-sky-600 font-bold text-lg mt-1">•</span>
-                  <span className="text-gray-700"><strong>Circuit Breakers</strong> - 1P, 2P, 3P for various applications</span>
+                  <span className="text-gray-700"><strong>Circuit Breakers</strong> - Expert selection of 1P, 2P, and 3P for all electrical needs</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-sky-600 font-bold text-lg mt-1">•</span>
-                  <span className="text-gray-700"><strong>Load Centers</strong> - Residential, commercial, and industrial</span>
+                  <span className="text-gray-700"><strong>Load Centers</strong> - Professional solutions for residential and industrial installations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-sky-600 font-bold text-lg mt-1">•</span>
-                  <span className="text-gray-700"><strong>Protection Devices</strong> - Surge protection, disconnects, and more</span>
+                  <span className="text-gray-700"><strong>Electrical Protection</strong> - Complete safety devices and system components</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-sky-600 font-bold text-lg mt-1">•</span>
-                  <span className="text-gray-700"><strong>Premium Brands</strong> - From trusted manufacturers worldwide</span>
+                  <span className="text-gray-700"><strong>Premium Quality</strong> - Only certified products from leading manufacturers</span>
                 </li>
               </ul>
             </div>
