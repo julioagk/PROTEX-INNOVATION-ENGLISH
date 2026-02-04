@@ -77,15 +77,14 @@ export default function Catalogo() {
 
   return (
     <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 pt-[15px] md:pt-[15px] pb-12 px-4 overflow-hidden">
-      {/* Hero simple para el catálogo */}
-      <div className="relative z-10 w-full max-w-7xl mb-4 md:mb-6">
+      {/* Hero Banner para el catálogo */}
+      <div className="relative z-10 w-full max-w-7xl mb-8 md:mb-12">
+        <div className="bg-gradient-to-r from-slate-700/10 via-sky-600/10 to-teal-700/10 rounded-3xl border border-gray-200 p-8 md:p-12 mb-6">
+          <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3 text-gray-900">Product Catalog</h1>
+          <p className="text-base md:text-lg text-gray-700 max-w-2xl">Browse our complete selection of premium circuit breakers, load centers, and electrical protection solutions. All products certified and ready for shipment.</p>
+        </div>
+        
         <div className="flex flex-col gap-4">
-          <div>
-            <h1 className="text-2xl md:text-4xl font-black tracking-tight">Product Catalog</h1>
-          </div>
-          
-          {/* Search bar */}
-          <div className="relative w-full">
             <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
