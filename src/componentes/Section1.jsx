@@ -49,7 +49,7 @@ export default function Section1() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl leading-relaxed font-light">
-                Specialists in circuit breakers, load centers and electrical protection for residential, commercial and industrial projects. Fast delivery, expert support and premium manufacturers.
+                Experts in circuit breakers.
               </p>
 
 
