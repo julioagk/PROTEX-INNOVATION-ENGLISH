@@ -42,7 +42,7 @@ export default function Section1() {
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight h-[100px] sm:h-[120px] md:h-[160px] lg:h-[180px] flex items-center">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight flex items-center mb-6">
                 <span className="block max-w-[16ch] text-sky-600">
                   {product.title}
                 </span>
