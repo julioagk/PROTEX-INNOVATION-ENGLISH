@@ -3,9 +3,9 @@ import { useNavigate, Link } from 'react-router-dom';
 import { products } from './productosData';
 
 const heroProducts = [
-  { id: 1, title: 'Industrial Breakers', badge: 'Reliable protection', color: 'from-blue-600 to-sky-500' },
-  { id: 2, title: 'Load Centers', badge: 'Fast installation', color: 'from-cyan-600 to-teal-500' },
-  { id: 3, title: 'Control Solutions', badge: 'Trusted brands', color: 'from-sky-600 to-blue-700' },
+  { id: 1, title: 'Premium Circuit Breakers', badge: 'Certified quality', color: 'from-blue-600 to-sky-500' },
+  { id: 2, title: 'Professional Load Centers', badge: 'Expert solutions', color: 'from-cyan-600 to-teal-500' },
+  { id: 3, title: 'Safety Protection Systems', badge: 'Trusted reliability', color: 'from-sky-600 to-blue-700' },
 ];
 
 export default function Section1() {
