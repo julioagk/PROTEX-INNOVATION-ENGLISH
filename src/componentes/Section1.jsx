@@ -49,7 +49,7 @@ export default function Section1() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl leading-relaxed font-light">
-                Experts in circuit breakers.
+                Experts in circuit breakers and electrical protection solutions. We deliver premium quality products for residential, commercial, and industrial applications with expert support.
               </p>
 
 
