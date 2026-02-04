@@ -12,6 +12,18 @@ import {
 
 const categories = [
   {
+    id: 'interruptores-1p',
+    label: 'Circuit Breakers 1P',
+    icon: BoltIcon,
+    colorClasses: {
+      bg: 'bg-amber-600',
+      text: 'text-amber-600',
+      groupHoverBg: 'group-hover:bg-amber-600',
+      groupHoverText: 'group-hover:text-white'
+    },
+    description: 'Single pole protection devices'
+  },
+  {
     id: 'interruptores-2p',
     label: 'Circuit Breakers 2P',
     icon: BoltIcon,
@@ -58,7 +70,7 @@ export default function Section2() {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {categories.map((category) => {
             const Icon = category.icon;
             return (
