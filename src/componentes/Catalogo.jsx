@@ -76,91 +76,95 @@ export default function Catalogo() {
   };
 
   return (
-    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 pt-[15px] md:pt-[15px] pb-12 px-4 overflow-hidden">
+    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-gray-900 pt-[15px] md:pt-[15px] pb-12 px-4 overflow-hidden">
       {/* Hero Banner para el catálogo */}
       <div className="relative z-10 w-full max-w-7xl mb-8 md:mb-12">
-        <div className="bg-gradient-to-r from-slate-700/10 via-sky-600/10 to-teal-700/10 rounded-3xl border border-gray-200 p-8 md:p-12 mb-6">
+        <div className="relative overflow-hidden bg-gradient-to-r from-slate-700/10 via-sky-600/10 to-teal-700/10 rounded-3xl border border-gray-200 p-8 md:p-12 mb-6">
+          <div className="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-sky-500/10 blur-2xl" />
+          <div className="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-teal-500/10 blur-2xl" />
           <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3 text-gray-900">Product Catalog</h1>
           <p className="text-base md:text-lg text-gray-700 max-w-2xl">Browse our complete selection of premium circuit breakers, load centers, and electrical protection solutions. All products certified and ready for shipment.</p>
         </div>
-        
-        <div className="flex flex-col gap-4">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full pl-10 pr-4 py-2.5 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all placeholder:text-gray-500"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-
-          {/* Filters row */}
-          <div className="flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between">
-            {/* Category filter buttons */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat.value}
-                  onClick={() => handleCategoryChange(cat.value)}
-                  className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
-                    category === cat.value
-                      ? 'bg-sky-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 border border-gray-300 hover:border-sky-600 hover:text-sky-600'
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
+        <div className="rounded-2xl bg-white/80 backdrop-blur border border-gray-200 shadow-sm p-4 md:p-6">
+          <div className="flex flex-col gap-4">
+            <div className="relative">
+              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="w-full pl-10 pr-4 py-3 text-gray-900 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-600/60 focus:border-transparent transition-all placeholder:text-gray-500"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
             </div>
 
-            {/* Price and sort */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  min="0"
-                  placeholder="Min $"
-                  value={minPrice}
-                  onChange={(e) => setMinPrice(e.target.value)}
-                  className="w-28 px-3 py-2 rounded-lg border border-gray-300 text-gray-800 focus:ring-2 focus:ring-slate-600 focus:border-transparent"
-                  aria-label="Minimum price"
-                />
-                <input
-                  type="number"
-                  min="0"
-                  placeholder="Max $"
-                  value={maxPrice}
-                  onChange={(e) => setMaxPrice(e.target.value)}
-                  className="w-28 px-3 py-2 rounded-lg border border-gray-300 text-gray-800 focus:ring-2 focus:ring-slate-600 focus:border-transparent"
-                  aria-label="Maximum price"
-                />
+            {/* Filters row */}
+            <div className="flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between">
+              {/* Category filter buttons */}
+              <div className="flex flex-wrap gap-2">
+                {categories.map((cat) => (
+                  <button
+                    key={cat.value}
+                    onClick={() => handleCategoryChange(cat.value)}
+                    className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 ${
+                      category === cat.value
+                        ? 'bg-gradient-to-r from-sky-600 to-teal-600 text-white shadow-md'
+                        : 'bg-gray-50 text-gray-700 border border-gray-200 hover:border-sky-600 hover:text-sky-700'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                ))}
               </div>
 
-              <select
-                className="w-full sm:w-44 px-3 py-2 rounded-lg border border-gray-300 text-gray-800 focus:ring-2 focus:ring-slate-600 focus:border-transparent"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                aria-label="Sort products"
-              >
-                <option value="none">Sort</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-              </select>
+              {/* Price and sort */}
+              <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
+                <div className="flex gap-2">
+                  <input
+                    type="number"
+                    min="0"
+                    placeholder="Min $"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(e.target.value)}
+                    className="w-28 px-3 py-2 rounded-xl border border-gray-300 bg-gray-50 text-gray-800 focus:ring-2 focus:ring-sky-600/60 focus:border-transparent"
+                    aria-label="Minimum price"
+                  />
+                  <input
+                    type="number"
+                    min="0"
+                    placeholder="Max $"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(e.target.value)}
+                    className="w-28 px-3 py-2 rounded-xl border border-gray-300 bg-gray-50 text-gray-800 focus:ring-2 focus:ring-sky-600/60 focus:border-transparent"
+                    aria-label="Maximum price"
+                  />
+                </div>
 
-              <button
-                onClick={clearFilters}
-                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:border-sky-600 hover:text-sky-600 font-semibold transition-colors"
-              >
-                Clear filters
-              </button>
+                <select
+                  className="w-full sm:w-44 px-3 py-2 rounded-xl border border-gray-300 bg-gray-50 text-gray-800 focus:ring-2 focus:ring-sky-600/60 focus:border-transparent"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  aria-label="Sort products"
+                >
+                  <option value="none">Sort</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                </select>
+
+                <button
+                  onClick={clearFilters}
+                  className="px-4 py-2 rounded-xl border border-gray-300 text-gray-700 hover:border-sky-600 hover:text-sky-700 font-semibold transition-colors"
+                >
+                  Clear filters
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-3 text-sm text-gray-600 flex items-center justify-between">
+        <div className="mt-4 text-sm text-gray-600 flex items-center justify-between bg-white/70 backdrop-blur border border-gray-200 rounded-xl px-4 py-2">
           <span>{sortedProducts.length} result{sortedProducts.length !== 1 ? 's' : ''}</span>
           {sortedProducts.length > 0 && (
             <span>Showing <span className="text-gray-900 font-semibold">{sortedProducts.length}</span> of <span className="text-gray-900 font-semibold">{products.length}</span></span>
@@ -170,7 +174,7 @@ export default function Catalogo() {
 
       {/* Grid de productos */}
       <div className="relative z-10 w-full max-w-7xl">
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {/* Skeletons mientras carga */}
           {loading && (
             <>
@@ -193,16 +197,15 @@ export default function Catalogo() {
           {!loading && sortedProducts.map((product) => (
             <div
               key={product.id}
-              className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white hover:border-gray-700 hover:shadow-lg transition-all duration-300"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-sky-600/40 hover:shadow-xl transition-all duration-300"
             >
               {/* Imagen del producto */}
-              <div className="relative w-full aspect-square bg-white overflow-hidden flex items-center justify-center p-4">
+              <div className="relative w-full aspect-square bg-gradient-to-b from-gray-50 to-white overflow-hidden">
                 <img
                   src={resolveImageSrc(product.image || product.imagen)}
                   alt={product.title || product.nombre}
                   loading="lazy"
-                  className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
-                  style={{ imageRendering: 'auto' }}
+                  className="object-contain w-full h-full bg-white p-5 transition-transform duration-300 group-hover:scale-[1.04]"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = EMPTY_PNG;
@@ -211,14 +214,14 @@ export default function Catalogo() {
                   }}
                 />
                 {/* Badge de precio */}
-                <div className="absolute top-3 right-3 bg-sky-600 text-white px-3 py-1.5 font-bold text-sm rounded-lg shadow-md">
-                  ${product.price || product.precio}
+                <div className="absolute top-3 right-3 bg-gray-900/90 text-white px-3 py-1.5 font-bold text-sm rounded-full shadow-md">
+                  US ${product.price || product.precio}
                 </div>
               </div>
 
               {/* Contenido del producto */}
               <div className="flex flex-col flex-1 p-5 gap-3 bg-white">
-                <h3 className="text-lg font-bold text-gray-900 line-clamp-1 group-hover:text-gray-700 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 line-clamp-1 group-hover:text-sky-700 transition-colors">
                   {product.title || product.nombre}
                 </h3>
                 <p className="text-sm text-gray-600 line-clamp-2 flex-1">
@@ -227,7 +230,7 @@ export default function Catalogo() {
                 
                 {/* Categoría badge */}
                 {product.category && product.category !== 'all' && (
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-200 text-gray-700 w-fit">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-50 text-sky-700 border border-sky-100 w-fit">
                     {categories.find(c => c.value === product.category)?.label || product.category}
                   </span>
                 )}
@@ -235,7 +238,7 @@ export default function Catalogo() {
                 {/* Botón */}
                 <Link
                   to={`/producto/${product.id}`}
-                  className="mt-auto w-full bg-gray-900 hover:bg-gray-700 text-white font-semibold py-1.5 px-3 text-xs md:text-base md:py-2.5 md:px-4 rounded-lg transition-colors duration-200 text-center"
+                  className="mt-auto w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2.5 px-4 text-sm md:text-base rounded-xl transition-colors duration-200 text-center"
                 >
                   View Details
                 </Link>
