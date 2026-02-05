@@ -24,7 +24,7 @@ export default function HomeSections() {
         </section>
 
         {/* Sección 1b - Why Choose Us */}
-        <section className="relative items-center justify-center min-h-screen text-gray-900 bg-white">
+        <section className="relative items-center justify-center min-h-[60vh] text-gray-900 bg-white">
           <Section1b />
         </section>
   
