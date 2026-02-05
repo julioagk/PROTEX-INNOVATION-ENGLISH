@@ -76,12 +76,13 @@ export default function Catalogo() {
   };
 
   return (
-    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-gray-900 pt-[15px] md:pt-[15px] pb-12 px-4 overflow-hidden">
+    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-sky-50 via-white to-slate-50 text-gray-900 pt-[15px] md:pt-[15px] pb-16 px-4 overflow-hidden">
       {/* Hero Banner para el catálogo */}
       <div className="relative z-10 w-full max-w-7xl mb-8 md:mb-12">
-        <div className="relative overflow-hidden bg-gradient-to-r from-slate-700/10 via-sky-600/10 to-teal-700/10 rounded-3xl border border-gray-200 p-8 md:p-12 mb-6">
+        <div className="relative overflow-hidden bg-gradient-to-r from-slate-700/10 via-sky-600/15 to-teal-700/10 rounded-3xl border border-gray-200 p-8 md:p-12 mb-6 shadow-sm">
           <div className="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-sky-500/10 blur-2xl" />
           <div className="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-teal-500/10 blur-2xl" />
+          <span className="inline-flex items-center rounded-full bg-sky-600/10 text-sky-700 px-3 py-1 text-xs font-semibold tracking-wide mb-3">Premium Electrical</span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3 text-gray-900">Product Catalog</h1>
           <p className="text-base md:text-lg text-gray-700 max-w-2xl">Browse our complete selection of premium circuit breakers, load centers, and electrical protection solutions. All products certified and ready for shipment.</p>
         </div>
@@ -197,7 +198,7 @@ export default function Catalogo() {
           {!loading && sortedProducts.map((product) => (
             <div
               key={product.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-sky-600/40 hover:shadow-xl transition-all duration-300"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white hover:border-sky-600/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Imagen del producto */}
               <div className="relative w-full aspect-square bg-gradient-to-b from-gray-50 to-white overflow-hidden">
@@ -214,7 +215,7 @@ export default function Catalogo() {
                   }}
                 />
                 {/* Badge de precio */}
-                <div className="absolute top-3 right-3 bg-gray-900/90 text-white px-3 py-1.5 font-bold text-sm rounded-full shadow-md">
+                <div className="absolute top-3 right-3 bg-gradient-to-r from-sky-600 to-teal-600 text-white px-3.5 py-1.5 font-bold text-sm rounded-full shadow-md">
                   US ${product.price || product.precio}
                 </div>
               </div>
@@ -238,7 +239,7 @@ export default function Catalogo() {
                 {/* Botón */}
                 <Link
                   to={`/producto/${product.id}`}
-                  className="mt-auto w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2.5 px-4 text-sm md:text-base rounded-xl transition-colors duration-200 text-center"
+                  className="mt-auto w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2.5 px-4 text-sm md:text-base rounded-xl transition-colors duration-200 text-center"
                 >
                   View Details
                 </Link>
