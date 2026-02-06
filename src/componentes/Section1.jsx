@@ -73,27 +73,36 @@ export default function Section1() {
                 {collageProducts.map((item, idx) => (
                   <div
                     key={item.id}
-                    className="group relative rounded-xl overflow-hidden bg-white border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:border-sky-500 cursor-pointer"
+                    className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_10px_30px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_50px_rgba(2,132,199,0.20)] transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/60 cursor-pointer"
                     onClick={() => navigate(`/producto/${item.id}`)}
                   >
+                    <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
                     {/* Imagen */}
-                    <div className="relative w-full h-40 md:h-48 bg-gray-100 overflow-hidden">
+                    <div className="relative w-full h-40 md:h-48 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
                       <img 
                         src={item.image} 
                         alt={item.title}
                         loading="lazy"
-                        className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-contain p-5 group-hover:scale-[1.08] transition-transform duration-300"
                       />
                     </div>
 
                     {/* Precio */}
-                    <div className="absolute top-2 right-2 bg-sky-600 text-white px-3 py-1 rounded-lg text-sm font-bold shadow-lg">
+                    <div className="absolute top-3 right-3 bg-gradient-to-r from-sky-600 to-teal-500 text-white px-3.5 py-1.5 rounded-full text-sm font-bold shadow-lg">
                       US ${item.price.toFixed(2)}
                     </div>
 
+                    {/* Chip */}
+                    <div className="absolute top-3 left-3 bg-white/90 text-slate-700 px-2.5 py-1 rounded-full text-[11px] font-semibold border border-slate-200 shadow-sm">
+                      Top Pick
+                    </div>
+
                     {/* Overlay hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <p className="text-white font-semibold text-sm line-clamp-2">{item.title}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <div className="w-full">
+                        <p className="text-white font-semibold text-sm line-clamp-2">{item.title}</p>
+                        <div className="mt-2 text-xs text-white/80">View details</div>
+                      </div>
                     </div>
                   </div>
                 ))}
