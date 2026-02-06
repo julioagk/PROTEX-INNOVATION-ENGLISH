@@ -79,19 +79,6 @@ export default function Catalogo() {
     <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-sky-50 via-white to-slate-50 text-gray-900 pt-[15px] md:pt-[15px] pb-20 px-4 overflow-hidden">
       {/* Hero Banner para el catálogo */}
       <div className="relative z-10 w-full max-w-7xl mb-8 md:mb-12">
-        <div className="relative overflow-hidden rounded-[32px] border border-sky-100 bg-white p-8 md:p-12 mb-6 shadow-[0_12px_40px_rgba(2,132,199,0.12)]">
-          <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
-          <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-sky-500/10 blur-2xl" />
-          <div className="absolute -left-16 -bottom-16 w-56 h-56 rounded-full bg-emerald-400/10 blur-3xl" />
-          <span className="inline-flex items-center rounded-full bg-sky-600/10 text-sky-700 px-3 py-1 text-xs font-semibold tracking-wide mb-4">Premium Electrical</span>
-          <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3 text-slate-900">Product Catalog</h1>
-          <p className="text-base md:text-lg text-slate-700 max-w-2xl">Browse our complete selection of premium circuit breakers, load centers, and electrical protection solutions. All products certified and ready for shipment.</p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            <span className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">Certified Products</span>
-            <span className="inline-flex items-center rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Fast Shipping</span>
-            <span className="inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">Warranty Included</span>
-          </div>
-        </div>
         <div className="rounded-2xl bg-white/80 backdrop-blur border border-gray-200 shadow-sm p-4 md:p-6">
           <div className="flex flex-col gap-4">
             <div className="relative">
