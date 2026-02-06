@@ -69,11 +69,20 @@ export default function Section1() {
 
             {/* Right: Product Grid */}
             <div className="relative h-full">
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+              <div className="relative rounded-3xl border border-sky-100 bg-white/80 backdrop-blur p-4 md:p-6 shadow-[0_20px_60px_rgba(2,132,199,0.12)]">
+                <div className="absolute inset-x-0 top-0 h-2 rounded-t-3xl bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
+                <div className="mb-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-sky-600">Featured Catalog</p>
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900">Top Picks for You</h3>
+                  </div>
+                  <span className="hidden md:inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 border border-sky-100">Live Pricing</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
                 {collageProducts.map((item, idx) => (
                   <div
                     key={item.id}
-                    className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_10px_30px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_50px_rgba(2,132,199,0.20)] transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/60 cursor-pointer"
+                    className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.10)] hover:shadow-[0_20px_60px_rgba(2,132,199,0.25)] transition-all duration-300 hover:-translate-y-2 hover:border-sky-500/70 cursor-pointer"
                     onClick={() => navigate(`/producto/${item.id}`)}
                   >
                     <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
@@ -106,6 +115,7 @@ export default function Section1() {
                     </div>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
           </div>
