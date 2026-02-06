@@ -76,15 +76,21 @@ export default function Catalogo() {
   };
 
   return (
-    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-sky-50 via-white to-slate-50 text-gray-900 pt-[15px] md:pt-[15px] pb-16 px-4 overflow-hidden">
+    <section className="relative flex flex-col items-center w-full min-h-screen bg-gradient-to-b from-sky-50 via-white to-slate-50 text-gray-900 pt-[15px] md:pt-[15px] pb-20 px-4 overflow-hidden">
       {/* Hero Banner para el catálogo */}
       <div className="relative z-10 w-full max-w-7xl mb-8 md:mb-12">
-        <div className="relative overflow-hidden bg-gradient-to-r from-slate-700/10 via-sky-600/15 to-teal-700/10 rounded-3xl border border-gray-200 p-8 md:p-12 mb-6 shadow-sm">
-          <div className="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-sky-500/10 blur-2xl" />
-          <div className="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-teal-500/10 blur-2xl" />
-          <span className="inline-flex items-center rounded-full bg-sky-600/10 text-sky-700 px-3 py-1 text-xs font-semibold tracking-wide mb-3">Premium Electrical</span>
-          <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3 text-gray-900">Product Catalog</h1>
-          <p className="text-base md:text-lg text-gray-700 max-w-2xl">Browse our complete selection of premium circuit breakers, load centers, and electrical protection solutions. All products certified and ready for shipment.</p>
+        <div className="relative overflow-hidden rounded-[32px] border border-sky-100 bg-white p-8 md:p-12 mb-6 shadow-[0_12px_40px_rgba(2,132,199,0.12)]">
+          <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
+          <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-sky-500/10 blur-2xl" />
+          <div className="absolute -left-16 -bottom-16 w-56 h-56 rounded-full bg-emerald-400/10 blur-3xl" />
+          <span className="inline-flex items-center rounded-full bg-sky-600/10 text-sky-700 px-3 py-1 text-xs font-semibold tracking-wide mb-4">Premium Electrical</span>
+          <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3 text-slate-900">Product Catalog</h1>
+          <p className="text-base md:text-lg text-slate-700 max-w-2xl">Browse our complete selection of premium circuit breakers, load centers, and electrical protection solutions. All products certified and ready for shipment.</p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <span className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">Certified Products</span>
+            <span className="inline-flex items-center rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Fast Shipping</span>
+            <span className="inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">Warranty Included</span>
+          </div>
         </div>
         <div className="rounded-2xl bg-white/80 backdrop-blur border border-gray-200 shadow-sm p-4 md:p-6">
           <div className="flex flex-col gap-4">
@@ -198,10 +204,10 @@ export default function Catalogo() {
           {!loading && sortedProducts.map((product) => (
             <div
               key={product.id}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white hover:border-sky-600/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white hover:border-sky-500/60 hover:shadow-[0_18px_50px_rgba(2,132,199,0.20)] transition-all duration-300 hover:-translate-y-1"
             >
               {/* Imagen del producto */}
-              <div className="relative w-full aspect-square bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+              <div className="relative w-full aspect-square bg-gradient-to-b from-slate-50 to-white overflow-hidden">
                 <img
                   src={resolveImageSrc(product.image || product.imagen)}
                   alt={product.title || product.nombre}
@@ -215,7 +221,7 @@ export default function Catalogo() {
                   }}
                 />
                 {/* Badge de precio */}
-                <div className="absolute top-3 right-3 bg-gradient-to-r from-sky-600 to-teal-600 text-white px-3.5 py-1.5 font-bold text-sm rounded-full shadow-md">
+                <div className="absolute top-3 right-3 bg-gradient-to-r from-sky-600 to-teal-500 text-white px-3.5 py-1.5 font-bold text-sm rounded-full shadow-md">
                   US ${product.price || product.precio}
                 </div>
               </div>
@@ -239,7 +245,7 @@ export default function Catalogo() {
                 {/* Botón */}
                 <Link
                   to={`/producto/${product.id}`}
-                  className="mt-auto w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2.5 px-4 text-sm md:text-base rounded-xl transition-colors duration-200 text-center"
+                  className="mt-auto w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2.5 px-4 text-sm md:text-base rounded-xl transition-colors duration-200 text-center shadow-[0_10px_25px_rgba(2,132,199,0.25)]"
                 >
                   View Details
                 </Link>
