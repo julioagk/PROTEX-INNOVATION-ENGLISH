@@ -13,6 +13,7 @@ export default function Section1() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const navigate = useNavigate();
   const collageProducts = products.slice(0, 6);
+  const [featuredProduct, ...gridProducts] = collageProducts;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,8 +70,8 @@ export default function Section1() {
 
             {/* Right: Product Grid */}
             <div className="relative h-full">
-              <div className="relative rounded-3xl border border-sky-100 bg-white/80 backdrop-blur p-4 md:p-6 shadow-[0_20px_60px_rgba(2,132,199,0.12)]">
-                <div className="absolute inset-x-0 top-0 h-2 rounded-t-3xl bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
+              <div className="relative rounded-[32px] border border-slate-200 bg-white/90 backdrop-blur p-4 md:p-6 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
+                <div className="absolute inset-x-0 top-0 h-2 rounded-t-[32px] bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-widest text-sky-600">Featured Catalog</p>
@@ -78,43 +79,60 @@ export default function Section1() {
                   </div>
                   <span className="hidden md:inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 border border-sky-100">Live Pricing</span>
                 </div>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-                {collageProducts.map((item, idx) => (
-                  <div
-                    key={item.id}
-                    className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.10)] hover:shadow-[0_20px_60px_rgba(2,132,199,0.25)] transition-all duration-300 hover:-translate-y-2 hover:border-sky-500/70 cursor-pointer"
-                    onClick={() => navigate(`/producto/${item.id}`)}
+
+                {featuredProduct && (
+                  <button
+                    onClick={() => navigate(`/producto/${featuredProduct.id}`)}
+                    className="group w-full text-left mb-5 rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-white p-4 md:p-5 shadow-[0_16px_45px_rgba(2,132,199,0.18)] hover:shadow-[0_22px_60px_rgba(2,132,199,0.28)] transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
-                    {/* Imagen */}
-                    <div className="relative w-full h-40 md:h-48 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-                      <img 
-                        src={item.image} 
-                        alt={item.title}
-                        loading="lazy"
-                        className="w-full h-full object-contain p-5 group-hover:scale-[1.08] transition-transform duration-300"
-                      />
-                    </div>
-
-                    {/* Precio */}
-                    <div className="absolute top-3 right-3 bg-gradient-to-r from-sky-600 to-teal-500 text-white px-3.5 py-1.5 rounded-full text-sm font-bold shadow-lg">
-                      US ${item.price.toFixed(2)}
-                    </div>
-
-                    {/* Chip */}
-                    <div className="absolute top-3 left-3 bg-white/90 text-slate-700 px-2.5 py-1 rounded-full text-[11px] font-semibold border border-slate-200 shadow-sm">
-                      Top Pick
-                    </div>
-
-                    {/* Overlay hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <div className="w-full">
-                        <p className="text-white font-semibold text-sm line-clamp-2">{item.title}</p>
-                        <div className="mt-2 text-xs text-white/80">View details</div>
+                    <div className="flex items-center gap-4">
+                      <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-xl bg-white border border-slate-200 overflow-hidden">
+                        <img
+                          src={featuredProduct.image}
+                          alt={featuredProduct.title}
+                          loading="lazy"
+                          className="h-full w-full object-contain p-3 group-hover:scale-[1.06] transition-transform duration-300"
+                        />
+                        <div className="absolute top-2 left-2 bg-sky-600 text-white px-2 py-0.5 rounded-full text-[10px] font-bold">Featured</div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs font-semibold uppercase tracking-widest text-sky-600">Best Seller</div>
+                        <div className="text-lg md:text-xl font-black text-slate-900 line-clamp-1">{featuredProduct.title}</div>
+                        <div className="text-sm text-slate-600 line-clamp-2 mt-1">{featuredProduct.description || "Premium protection and certified performance."}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-slate-500">From</div>
+                        <div className="text-lg md:text-xl font-black text-sky-600">US ${featuredProduct.price.toFixed(2)}</div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  </button>
+                )}
+
+                <div className="grid grid-cols-2 gap-4">
+                  {gridProducts.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => navigate(`/producto/${item.id}`)}
+                      className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.10)] hover:shadow-[0_20px_60px_rgba(2,132,199,0.25)] transition-all duration-300 hover:-translate-y-2 hover:border-sky-500/70 text-left"
+                    >
+                      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
+                      <div className="relative w-full h-36 md:h-40 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          loading="lazy"
+                          className="w-full h-full object-contain p-4 group-hover:scale-[1.08] transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="absolute top-3 right-3 bg-gradient-to-r from-sky-600 to-teal-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        US ${item.price.toFixed(2)}
+                      </div>
+                      <div className="p-4">
+                        <div className="text-sm font-semibold text-slate-900 line-clamp-1">{item.title}</div>
+                        <div className="text-xs text-slate-500 mt-1">View details</div>
+                      </div>
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
