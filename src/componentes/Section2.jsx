@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  BoltIcon, 
-  WrenchIcon, 
-  LightBulbIcon,
-  CubeIcon,
+import {
+  BoltIcon,
+  WrenchIcon,
   RectangleStackIcon,
   SparklesIcon,
   ChevronRightIcon
@@ -51,72 +49,98 @@ const categories = [
 
 export default function Section2() {
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 py-12 md:py-20 px-4">
-      {/* Background gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 -right-40 w-96 h-96 bg-gradient-to-bl from-slate-700/15 to-transparent rounded-full blur-3xl opacity-50" />
-        <div className="absolute bottom-0 -left-40 w-80 h-80 bg-gradient-to-tr from-teal-700/15 to-transparent rounded-full blur-3xl opacity-50" />
+    <section className="relative w-full min-h-screen px-4 py-14 md:py-20 bg-[#f6f7fb] font-['Plus_Jakarta_Sans'] overflow-hidden">
+      {/* Atmospheric background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-24 -right-32 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(2,132,199,0.18),transparent_60%)] blur-2xl" />
+        <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(20,184,166,0.18),transparent_60%)] blur-2xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.04)_0%,rgba(15,23,42,0)_40%,rgba(2,132,199,0.04)_100%)]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-4xl md:text-6xl font-black mb-4 md:mb-6 tracking-tight text-gray-900">
-            Our <span className="text-sky-600">Categories</span>
+      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_1.4fr] gap-10 lg:gap-16 items-center">
+        {/* Left content */}
+        <div className="animate-fade-in">
+          <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
+            Catalog Preview
+          </span>
+          <h2 className="mt-5 text-4xl md:text-6xl font-black tracking-tight text-slate-900 font-['Fraunces']">
+            A curated view of our
+            <span className="block text-sky-600">essential categories</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto px-2">
-            Explore our departments and find exactly what you need for your electrical projects
+          <p className="mt-4 text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
+            Clean, certified and ready-to-ship electrical protection. Pick a lane, then dive deeper into the full catalog with live pricing and specs.
           </p>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm">
+              <SparklesIcon className="h-5 w-5 text-sky-600" />
+              <p className="mt-3 text-sm font-semibold text-slate-900">Certified IEC</p>
+              <p className="text-xs text-slate-500">Compliance-first inventory.</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm">
+              <RectangleStackIcon className="h-5 w-5 text-teal-600" />
+              <p className="mt-3 text-sm font-semibold text-slate-900">Ready Stock</p>
+              <p className="text-xs text-slate-500">Fast dispatch on core lines.</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm">
+              <WrenchIcon className="h-5 w-5 text-slate-700" />
+              <p className="mt-3 text-sm font-semibold text-slate-900">Expert Help</p>
+              <p className="text-xs text-slate-500">Selection and technical support.</p>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              to="/Catalogo"
+              className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
+            >
+              Explore full catalog
+              <ChevronRightIcon className="h-4 w-4" />
+            </Link>
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">03 core lanes</span>
+          </div>
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {categories.map((category) => {
+        {/* Category mosaic */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {categories.map((category, index) => {
             const Icon = category.icon;
+            const isPrimary = index === 0;
             return (
               <Link
                 key={category.id}
                 to={`/Catalogo?category=${category.id}`}
-                className="group relative overflow-hidden rounded-2xl backdrop-blur-xl border border-gray-200 bg-white hover:bg-white transition-all duration-300 hover:scale-[1.02] md:hover:scale-105 hover:border-sky-500 shadow-sm hover:shadow-xl"
+                className={`group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-6 md:p-7 shadow-[0_18px_45px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(2,132,199,0.22)] ${isPrimary ? 'sm:col-span-2' : ''}`}
               >
-                {/* Background gradient */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${category.colorClasses.bg}`} />
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className={`absolute inset-0 ${category.colorClasses.bg} opacity-10`} />
+                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/40 blur-2xl" />
+                </div>
 
-                {/* Content */}
-                <div className="relative z-10 p-4 md:p-6 h-full flex flex-col">
-                  {/* Icon Container */}
-                  <div className={`w-10 h-10 md:w-14 md:h-14 rounded-xl bg-gray-50 ${category.colorClasses.groupHoverBg} p-2 md:p-3 mb-3 md:mb-4 flex items-center justify-center transition-colors duration-300`}>
-                    <Icon className={`w-full h-full ${category.colorClasses.text} ${category.colorClasses.groupHoverText} transition-colors duration-300`} />
+                <div className="relative z-10 flex items-start gap-4">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 ${category.colorClasses.groupHoverBg} transition-colors duration-300`}>
+                    <Icon className={`h-6 w-6 ${category.colorClasses.text} ${category.colorClasses.groupHoverText} transition-colors duration-300`} />
                   </div>
-
-                  {/* Text */}
-                  <h3 className="text-base md:text-xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-sky-600 transition-all duration-300 leading-tight">
-                    {category.label}
-                  </h3>
-                  <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 flex-grow line-clamp-2">
-                    {category.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center gap-1 md:gap-2 text-sky-600 font-medium text-xs md:text-sm group-hover:translate-x-1 transition-transform duration-300 mt-auto">
-                    <span>View</span>
-                    <ChevronRightIcon className="w-3 h-3 md:w-4 md:h-4" />
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors duration-300">
+                      {category.label}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                      {category.description}
+                    </p>
                   </div>
+                </div>
+
+                <div className="relative z-10 mt-6 flex items-center justify-between">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Browse now</span>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition-transform duration-300 group-hover:translate-x-1">
+                    View
+                    <ChevronRightIcon className="h-4 w-4" />
+                  </span>
                 </div>
               </Link>
             );
           })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-12 md:mt-16 text-center">
-          <Link
-            to="/Catalogo"
-            className="inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 text-sm md:text-base"
-          >
-            <span>View Full Catalog</span>
-            <ChevronRightIcon className="w-4 h-4 md:w-5 md:h-5" />
-          </Link>
         </div>
       </div>
     </section>
