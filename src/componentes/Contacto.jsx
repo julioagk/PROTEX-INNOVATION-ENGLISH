@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaCheck } from 'react-icons/fa';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
