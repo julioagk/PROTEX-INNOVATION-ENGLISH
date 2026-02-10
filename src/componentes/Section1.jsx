@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { ChevronRightIcon, BoltIcon } from '@heroicons/react/24/outline';
 import { products } from './productosData';
 
 const heroProducts = [
@@ -68,71 +69,85 @@ export default function Section1() {
               </div>
             </div>
 
-            {/* Right: Product Grid */}
+            {/* Right: Product Gallery */}
             <div className="relative h-full">
-              <div className="relative rounded-[32px] border border-slate-200 bg-white/90 backdrop-blur p-4 md:p-6 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
-                <div className="absolute inset-x-0 top-0 h-2 rounded-t-[32px] bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
-                <div className="mb-4 flex items-center justify-between">
+              <div className="relative rounded-[36px] border border-slate-200/70 bg-white/85 backdrop-blur-xl p-5 md:p-7 shadow-[0_26px_80px_rgba(15,23,42,0.14)]">
+                <div className="flex items-center justify-between gap-4 border-b border-slate-200/70 pb-4">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-sky-600">Featured Catalog</p>
-                    <h3 className="text-xl md:text-2xl font-black text-slate-900">Top Picks for You</h3>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Featured Catalog</p>
+                    <h3 className="text-2xl md:text-3xl font-black text-slate-900">Top Picks</h3>
                   </div>
-                  <span className="hidden md:inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700 border border-sky-100">Live Pricing</span>
+                  <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">Live pricing</span>
                 </div>
 
-                {featuredProduct && (
-                  <button
-                    onClick={() => navigate(`/producto/${featuredProduct.id}`)}
-                    className="group w-full text-left mb-5 rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-white p-4 md:p-5 shadow-[0_16px_45px_rgba(2,132,199,0.18)] hover:shadow-[0_22px_60px_rgba(2,132,199,0.28)] transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-xl bg-white border border-slate-200 overflow-hidden">
-                        <img
-                          src={featuredProduct.image}
-                          alt={featuredProduct.title}
-                          loading="lazy"
-                          className="h-full w-full object-contain p-3 group-hover:scale-[1.06] transition-transform duration-300"
-                        />
-                        <div className="absolute top-2 left-2 bg-sky-600 text-white px-2 py-0.5 rounded-full text-[10px] font-bold">Featured</div>
-                      </div>
-                      <div className="flex-1">
-                        <div className="text-xs font-semibold uppercase tracking-widest text-sky-600">Best Seller</div>
-                        <div className="text-lg md:text-xl font-black text-slate-900 line-clamp-1">{featuredProduct.title}</div>
-                        <div className="text-sm text-slate-600 line-clamp-2 mt-1">{featuredProduct.description || "Premium protection and certified performance."}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-xs text-slate-500">From</div>
-                        <div className="text-lg md:text-xl font-black text-sky-600">US ${featuredProduct.price.toFixed(2)}</div>
-                      </div>
-                    </div>
-                  </button>
-                )}
-
-                <div className="grid grid-cols-2 gap-4">
-                  {gridProducts.map((item) => (
+                <div className="mt-6 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+                  {featuredProduct && (
                     <button
-                      key={item.id}
-                      onClick={() => navigate(`/producto/${item.id}`)}
-                      className="group relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.10)] hover:shadow-[0_20px_60px_rgba(2,132,199,0.25)] transition-all duration-300 hover:-translate-y-2 hover:border-sky-500/70 text-left"
+                      onClick={() => navigate(`/producto/${featuredProduct.id}`)}
+                      className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_45px_rgba(2,132,199,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_70px_rgba(2,132,199,0.28)] text-left"
                     >
-                      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-600 via-teal-500 to-emerald-400" />
-                      <div className="relative w-full h-36 md:h-40 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          loading="lazy"
-                          className="w-full h-full object-contain p-4 group-hover:scale-[1.08] transition-transform duration-300"
-                        />
-                      </div>
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-sky-600 to-teal-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                        US ${item.price.toFixed(2)}
-                      </div>
-                      <div className="p-4">
-                        <div className="text-sm font-semibold text-slate-900 line-clamp-1">{item.title}</div>
-                        <div className="text-xs text-slate-500 mt-1">View details</div>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.12),transparent_60%)]" />
+                      <div className="relative flex flex-col h-full">
+                        <div className="flex items-center justify-between px-5 pt-5">
+                          <span className="inline-flex items-center rounded-full bg-slate-900 text-white text-[10px] font-semibold uppercase tracking-[0.2em] px-3 py-1">Featured</span>
+                          <span className="text-xs font-semibold text-slate-500">Best seller</span>
+                        </div>
+                        <div className="flex-1 flex items-center justify-center px-6 py-4">
+                          <img
+                            src={featuredProduct.image}
+                            alt={featuredProduct.title}
+                            loading="lazy"
+                            className="w-full max-w-[220px] object-contain drop-shadow-lg transition-transform duration-300 group-hover:scale-[1.04]"
+                          />
+                        </div>
+                        <div className="border-t border-slate-200/70 px-5 py-4">
+                          <div className="text-base md:text-lg font-bold text-slate-900 line-clamp-1">{featuredProduct.title}</div>
+                          <div className="text-sm text-slate-600 line-clamp-2 mt-1">{featuredProduct.description || "Premium protection and certified performance."}</div>
+                          <div className="mt-3 flex items-center justify-between">
+                            <span className="text-xs uppercase tracking-[0.2em] text-slate-500">From</span>
+                            <span className="text-lg font-black text-sky-600">US ${featuredProduct.price.toFixed(2)}</span>
+                          </div>
+                        </div>
                       </div>
                     </button>
-                  ))}
+                  )}
+
+                  <div className="grid grid-rows-3 gap-4">
+                    {gridProducts.slice(0, 3).map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => navigate(`/producto/${item.id}`)}
+                        className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left shadow-[0_12px_30px_rgba(15,23,42,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(2,132,199,0.2)]"
+                      >
+                        <div className="h-16 w-16 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            loading="lazy"
+                            className="h-full w-full object-contain p-2 transition-transform duration-300 group-hover:scale-[1.06]"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-sm font-semibold text-slate-900 line-clamp-1">{item.title}</div>
+                          <div className="text-xs text-slate-500 line-clamp-1">{item.description || "Reliable protection."}</div>
+                        </div>
+                        <span className="text-xs font-semibold text-sky-600">US ${item.price.toFixed(2)}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-5 flex items-center justify-between border-t border-slate-200/70 pt-4 text-sm text-slate-500">
+                  <span>Updated daily</span>
+                  <button
+                    onClick={() => navigate('/Catalogo')}
+                    className="inline-flex items-center gap-2 text-slate-900 font-semibold hover:text-sky-600 transition-colors"
+                  >
+                    View full catalog
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-white">
+                      <ChevronRightIcon className="h-3 w-3" />
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
