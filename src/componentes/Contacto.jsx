@@ -1,6 +1,66 @@
+import { useState, useEffect } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 export default function Contacto() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [notification, setNotification] = useState(null);
+
+  useEffect(() => {
+    emailjs.init('vHksxDcHgxvB7ZPHk');
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      await emailjs.send(
+        'service_231h1x1',
+        'template_o4plhf7',
+        {
+          to_email: 'info_sales@protexinnovations.com',
+          from_name: formData.fullName,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message
+        }
+      );
+
+      setNotification({
+        type: 'success',
+        message: 'Message sent successfully! We\'ll be in touch soon.'
+      });
+      setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
+      setTimeout(() => setNotification(null), 5000);
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setNotification({
+        type: 'error',
+        message: 'Failed to send message. Please try again later or contact us directly.'
+      });
+      setTimeout(() => setNotification(null), 5000);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 pt-[15px] md:pt-[15px] pb-16 px-4">
       <div className="max-w-7xl mx-auto">
@@ -13,7 +73,14 @@ export default function Contacto() {
               <span className="w-2 h-8 bg-gradient-to-b from-slate-700 to-slate-600 rounded-full"></span>
               Send us a message
             </h2>
-            <form className="space-y-5">
+            
+            {notification && (
+              <div className={`mb-6 p-4 rounded-lg ${notification.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                {notification.message}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -21,6 +88,9 @@ export default function Contacto() {
                   </label>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
                     placeholder="Your name"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                     required
@@ -32,6 +102,9 @@ export default function Contacto() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="you@email.com"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                     required
@@ -45,6 +118,9 @@ export default function Contacto() {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="+1 (713) 201-5742"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                 />
@@ -56,6 +132,9 @@ export default function Contacto() {
                 </label>
                 <input
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="What would you like to talk about?"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                   required
@@ -67,6 +146,9 @@ export default function Contacto() {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Tell us how we can help..."
                   rows={5}
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all resize-none"
@@ -76,9 +158,10 @@ export default function Contacto() {
 
               <button 
                 type="submit"
-                className="w-full bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                disabled={isLoading}
+                className="w-full bg-slate-700 hover:bg-slate-600 disabled:bg-slate-400 text-white font-semibold py-3.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
               >
-                Send message
+                {isLoading ? 'Sending...' : 'Send message'}
               </button>
               
               <p className="text-sm text-gray-600 text-center">
