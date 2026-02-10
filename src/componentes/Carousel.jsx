@@ -8,11 +8,11 @@ import Footer from "./Footer";
 
 export default function HomeSections() {
     return (
-      <main className="static left-0 w-full h-screen snap-y snap-mandatory scroll-smooth"> {/* Espacio para no tapar con la navbar */}
+      <main className="relative w-full scroll-smooth"> {/* Espacio para no tapar con la navbar */}
       
 
         {/* Sección 1 */}
-        <section className="relative right-0 items-center justify-center w-full min-h-screen text-white bg-neutral-950 snap-start ">
+        <section className="relative right-0 items-center justify-center w-full min-h-screen text-white bg-neutral-950">
          {/* Desktop Version */}
          <div className="hidden md:block">
             <Section1 />
@@ -24,18 +24,18 @@ export default function HomeSections() {
         </section>
 
         {/* Sección 1b - Why Choose Us */}
-        <section className="relative items-center justify-center min-h-[60vh] text-gray-900 bg-white">
+        <section className="relative items-center justify-center py-10 md:py-14 text-gray-900 bg-white">
           <Section1b />
         </section>
   
         {/* Sección 2 */}
-        <section className="relative items-center justify-center min-h-screen text-white bg-gradient-to-b from-green to-green">
+        <section className="relative items-center justify-center py-10 md:py-14 text-white bg-gradient-to-b from-green to-green">
           <Section2 />
         </section>
 
   
         {/* Sección 3 */}
-        <section className="relative items-center justify-center min-h-screen text-black bg-gradient-to-b from-neutral-950 to-neutral-900">
+        <section className="relative items-center justify-center py-12 md:py-16 text-black bg-gradient-to-b from-neutral-950 to-neutral-900">
           <Section3 />
         </section>
         {/* Footer */}

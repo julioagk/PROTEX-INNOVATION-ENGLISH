@@ -46,7 +46,7 @@ const categories = [
 
 export default function Section2() {
   return (
-    <section className="relative w-full min-h-screen px-4 py-14 md:py-20 bg-[#f6f7fb] font-['Plus_Jakarta_Sans'] overflow-hidden">
+    <section className="relative w-full px-4 py-8 md:py-12 bg-[#f6f7fb] font-['Plus_Jakarta_Sans'] overflow-hidden">
       {/* Atmospheric background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-24 -right-32 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(2,132,199,0.18),transparent_60%)] blur-2xl" />

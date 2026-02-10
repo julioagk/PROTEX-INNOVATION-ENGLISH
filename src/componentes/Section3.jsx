@@ -36,9 +36,9 @@ export default function Section3() {
       </div>
 
       {/* Hero section with text and features */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 md:py-20">
         {/* Main heading */}
-        <div className="mb-16 md:mb-24 text-center md:text-left">
+        <div className="mb-10 md:mb-16 text-center md:text-left">
           <h2 className="text-4xl md:text-7xl font-black tracking-tight mb-6 md:mb-8 leading-tight text-gray-900">
             The best choice in <br />
             <span className="text-sky-600">
@@ -51,7 +51,7 @@ export default function Section3() {
         </div>
 
         {/* Features as a list */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-20 md:mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {benefits.map((benefit, idx) => {
             const Icon = benefit.icon;
             return (
@@ -78,7 +78,7 @@ export default function Section3() {
         </div>
 
         {/* Trust & Values section */}
-        <div className="mb-20 md:mb-24">
+        <div className="mb-12 md:mb-16">
           <div className="bg-gradient-to-r from-slate-700/5 to-sky-600/5 rounded-3xl p-10 md:p-16 border border-gray-100 shadow-sm">
             <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 text-center">
               Protecting your electrical installations

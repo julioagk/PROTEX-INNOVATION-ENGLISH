@@ -3,7 +3,7 @@ import { CheckCircleIcon, SparklesIcon, ShieldCheckIcon } from '@heroicons/react
 
 export default function Section1b() {
   return (
-    <section className="relative w-full bg-white py-10 md:py-14 px-4 overflow-hidden">
+    <section className="relative w-full bg-white py-8 md:py-10 px-4 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 right-0 w-80 h-80 bg-sky-600/5 rounded-full blur-3xl opacity-30" />
@@ -12,7 +12,7 @@ export default function Section1b() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Por Qué Elegirnos */}
-        <div className="mb-12 md:mb-14">
+        <div className="mb-8 md:mb-10">
           <h2 className="text-3xl md:text-5xl font-black mb-8 md:mb-10 tracking-tight text-gray-900 text-center">
             Why <span className="text-sky-600">Choose Us</span>
           </h2>
