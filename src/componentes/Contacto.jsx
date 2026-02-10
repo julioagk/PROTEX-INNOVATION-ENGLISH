@@ -247,33 +247,114 @@ export default function Contacto() {
 
       {/* Success Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 animate-fade-in">
-          <div className="bg-white rounded-3xl p-8 md:p-12 max-w-md w-full mx-4 shadow-2xl animate-scale-pop">
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 50,
+          animation: 'fadeInModal 0.3s ease-in-out'
+        }}>
+          <div style={{
+            backgroundColor: 'white',
+            borderRadius: '24px',
+            padding: '48px',
+            maxWidth: '448px',
+            width: '100%',
+            margin: '16px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+            animation: 'slideUpModal 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
+          }}>
             {/* Success Icon */}
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center animate-bounce">
-                <FaCheck className="w-8 h-8 text-green-600" />
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '24px'
+            }}>
+              <div style={{
+                width: '64px',
+                height: '64px',
+                backgroundColor: '#dcfce7',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                animation: 'bounceIcon 1s infinite'
+              }}>
+                <FaCheck style={{
+                  width: '32px',
+                  height: '32px',
+                  color: '#16a34a',
+                  fontSize: '32px'
+                }} />
               </div>
             </div>
 
             {/* Success Title */}
-            <h3 className="text-2xl font-bold text-center mb-3 text-gray-900">
+            <h3 style={{
+              fontSize: '24px',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              marginBottom: '12px',
+              color: '#111827'
+            }}>
               ¡Mensaje Enviado!
             </h3>
 
             {/* Success Message */}
-            <p className="text-center text-gray-600 mb-8">
+            <p style={{
+              textAlign: 'center',
+              color: '#6b7280',
+              marginBottom: '32px',
+              fontSize: '16px'
+            }}>
               Tu información ha sido recibida correctamente. Nos pondremos en contacto contigo pronto.
             </p>
 
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg"
+              style={{
+                width: '100%',
+                backgroundColor: '#16a34a',
+                color: 'white',
+                fontWeight: '600',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '16px',
+                transition: 'background-color 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#15803d'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#16a34a'}
             >
               Entendido
             </button>
           </div>
+
+          <style>{`
+            @keyframes fadeInModal {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            @keyframes slideUpModal {
+              from { 
+                transform: translateY(30px);
+                opacity: 0;
+              }
+              to { 
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+            @keyframes bounceIcon {
+              0%, 100% { transform: translateY(0); }
+              50% { transform: translateY(-10px); }
+            }
+          `}</style>
         </div>
       )}
     </section>
