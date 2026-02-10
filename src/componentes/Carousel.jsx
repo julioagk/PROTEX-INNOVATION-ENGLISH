@@ -35,7 +35,7 @@ export default function HomeSections() {
 
   
         {/* Sección 3 */}
-        <section className="relative items-center justify-center py-12 md:py-16 text-black bg-gradient-to-b from-neutral-950 to-neutral-900">
+        <section className="relative items-center justify-center text-black bg-white">
           <Section3 />
         </section>
         {/* Footer */}
