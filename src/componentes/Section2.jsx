@@ -2,9 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   BoltIcon,
-  WrenchIcon,
-  RectangleStackIcon,
-  SparklesIcon,
   ChevronRightIcon
 } from '@heroicons/react/24/outline';
 
@@ -57,51 +54,7 @@ export default function Section2() {
         <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.04)_0%,rgba(15,23,42,0)_40%,rgba(2,132,199,0.04)_100%)]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_1.4fr] gap-10 lg:gap-16 items-center">
-        {/* Left content */}
-        <div className="animate-fade-in">
-          <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
-            Catalogo destacado
-          </span>
-          <h2 className="mt-5 text-4xl md:text-6xl font-black tracking-tight text-slate-900 font-['Fraunces']">
-            A curated view of our
-            <span className="block text-sky-600">essential categories</span>
-          </h2>
-          <p className="mt-4 text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
-            Productos certificados y listos para entrega. Elige una categoria y entra al catalogo completo con precios y fichas tecnicas.
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm">
-              <SparklesIcon className="h-5 w-5 text-sky-600" />
-              <p className="mt-3 text-sm font-semibold text-slate-900">Certified IEC</p>
-              <p className="text-xs text-slate-500">Compliance-first inventory.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm">
-              <RectangleStackIcon className="h-5 w-5 text-teal-600" />
-              <p className="mt-3 text-sm font-semibold text-slate-900">Ready Stock</p>
-              <p className="text-xs text-slate-500">Fast dispatch on core lines.</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm">
-              <WrenchIcon className="h-5 w-5 text-slate-700" />
-              <p className="mt-3 text-sm font-semibold text-slate-900">Expert Help</p>
-              <p className="text-xs text-slate-500">Selection and technical support.</p>
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              to="/Catalogo"
-              className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
-            >
-              Ver catalogo completo
-              <ChevronRightIcon className="h-4 w-4" />
-            </Link>
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">03 categorias clave</span>
-          </div>
-        </div>
-
-        {/* Category mosaic */}
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {categories.map((category, index) => {
             const Icon = category.icon;
