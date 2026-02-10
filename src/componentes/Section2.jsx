@@ -61,14 +61,14 @@ export default function Section2() {
         {/* Left content */}
         <div className="animate-fade-in">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
-            Catalog Preview
+            Catalogo destacado
           </span>
           <h2 className="mt-5 text-4xl md:text-6xl font-black tracking-tight text-slate-900 font-['Fraunces']">
             A curated view of our
             <span className="block text-sky-600">essential categories</span>
           </h2>
           <p className="mt-4 text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
-            Clean, certified and ready-to-ship electrical protection. Pick a lane, then dive deeper into the full catalog with live pricing and specs.
+            Productos certificados y listos para entrega. Elige una categoria y entra al catalogo completo con precios y fichas tecnicas.
           </p>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -94,10 +94,10 @@ export default function Section2() {
               to="/Catalogo"
               className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
             >
-              Explore full catalog
+              Ver catalogo completo
               <ChevronRightIcon className="h-4 w-4" />
             </Link>
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">03 core lanes</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">03 categorias clave</span>
           </div>
         </div>
 
