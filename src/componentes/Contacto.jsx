@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaCheck } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 
 export default function Contacto() {
@@ -12,6 +12,7 @@ export default function Contacto() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     emailjs.init('vHksxDcHgxvB7ZPHk');
@@ -47,8 +48,8 @@ export default function Contacto() {
         type: 'success',
         message: 'Message sent successfully! We\'ll be in touch soon.'
       });
+      setShowModal(true);
       setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
-      setTimeout(() => setNotification(null), 5000);
     } catch (error) {
       console.error('EmailJS error:', error);
       setNotification({
@@ -243,6 +244,38 @@ export default function Contacto() {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 animate-fade-in">
+          <div className="bg-white rounded-3xl p-8 md:p-12 max-w-md w-full mx-4 shadow-2xl animate-scale-pop">
+            {/* Success Icon */}
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center animate-bounce">
+                <FaCheck className="w-8 h-8 text-green-600" />
+              </div>
+            </div>
+
+            {/* Success Title */}
+            <h3 className="text-2xl font-bold text-center mb-3 text-gray-900">
+              ¡Mensaje Enviado!
+            </h3>
+
+            {/* Success Message */}
+            <p className="text-center text-gray-600 mb-8">
+              Tu información ha sido recibida correctamente. Nos pondremos en contacto contigo pronto.
+            </p>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
