@@ -53,7 +53,6 @@ export default function Terms() {
                 <li>You are responsible for providing accurate order information</li>
                 <li>We reserve the right to cancel any order if payment is declined or suspected of fraud</li>
                 <li>Order confirmation does not guarantee product availability</li>
-                <li>A $9.99 shipping fee applies to all orders</li>
               </ul>
             </section>
 

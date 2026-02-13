@@ -48,7 +48,7 @@ export default function Navbar() {
   const IVA_RATE = 0.0825;
   const ivaAmount = parseFloat((totalPrice * IVA_RATE).toFixed(2));
   const subtotal = parseFloat(totalPrice.toFixed(2));
-  const shippingCost = cart.length > 0 ? 9.99 : 0; // Costo fijo de envío
+  const shippingCost = 0;
   const totalWithIVA = parseFloat((subtotal + ivaAmount + shippingCost).toFixed(2));
 
   const isLightPage = location.pathname.startsWith('/Catalogo') || location.pathname.startsWith('/producto');
@@ -223,10 +223,6 @@ export default function Navbar() {
                   <span>Tax (8.25%):</span>
                   <span className="font-semibold text-sky-600">${ivaAmount.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-gray-700">
-                  <span>Shipping:</span>
-                  <span className="font-semibold">$9.99</span>
-                </div>
                 <div className="flex justify-between font-bold text-gray-900 text-base border-t pt-2">
                   <span>Total:</span>
                   <span className="text-sky-600">${totalWithIVA.toFixed(2)}</span>
@@ -237,7 +233,7 @@ export default function Navbar() {
                 href={`https://wa.me/17138057630?text=${encodeURIComponent(
                   `Hi! I want to make a purchase:\n\n${cart
                     .map((item, i) => `${i + 1}. ${(item.title || item.nombre)} x${item.quantity} - $${((item.price || item.precio) * item.quantity).toFixed(2)}`)
-                    .join("\n")}\n\n═════════════════\nSubtotal: $${subtotal.toFixed(2)}\nTax (8.25%): $${ivaAmount.toFixed(2)}\nShipping: $9.99\n═════════════════\n💰 TOTAL: $${totalWithIVA.toFixed(2)}`
+                    .join("\n")}\n\n═════════════════\nSubtotal: $${subtotal.toFixed(2)}\nTax (8.25%): $${ivaAmount.toFixed(2)}\n═════════════════\n💰 TOTAL: $${totalWithIVA.toFixed(2)}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
