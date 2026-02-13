@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Empresa() {
   return (
     <section className="relative w-full min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900 pt-[15px] md:pt-[15px] pb-20 px-4 overflow-hidden">
@@ -65,9 +67,12 @@ export default function Empresa() {
           <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
             Explore our complete catalog and discover why thousands of customers trust us.
           </p>
-          <button className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 active:scale-95">
-            Explore Catalog
-          </button>
+            <Link
+              to="/Catalogo"
+              className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center justify-center"
+            >
+              Explore Catalog
+            </Link>
         </div>
       </div>
     </section>
