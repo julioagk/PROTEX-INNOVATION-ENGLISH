@@ -122,7 +122,7 @@ export default function Contacto() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="713-805-7630"
+                  placeholder="+1 (703) 201-7630"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all"
                 />
               </div>
@@ -199,11 +199,11 @@ export default function Contacto() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                  <a href="tel:+17138057630" className="text-gray-600 hover:text-teal-600 transition-colors">
-                    713-805-7630
+                  <a href="tel:+17032017630" className="text-gray-600 hover:text-teal-600 transition-colors">
+                    +1 (703) 201-7630
                   </a>
-                  <a href="tel:+17138057630" className="text-gray-600 hover:text-teal-600 transition-colors block mt-2">
-                    713-805-7630
+                  <a href="tel:+17032017630" className="text-gray-600 hover:text-teal-600 transition-colors block mt-2">
+                    +1 (703) 201-7630
                   </a>
                   <p className="text-sm text-gray-500 mt-1">Mon - Fri: 9:00am - 5:00pm | Sat: 9:00am - 2:00pm</p>
                 </div>
