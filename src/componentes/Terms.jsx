@@ -161,7 +161,7 @@ export default function Terms() {
                   <strong>Email:</strong> <a href="mailto:info_sales@protexinnovations.com" className="text-blue-600 hover:text-blue-700">info_sales@protexinnovations.com</a>
                 </p>
                 <p className="text-gray-700">
-                  <strong>Phone:</strong> <a href="tel:+17132015742" className="text-blue-600 hover:text-blue-700">+1 (713) 201-5742</a>
+                  <strong>Phone:</strong> <a href="tel:+17138057630" className="text-blue-600 hover:text-blue-700">713-805-7630</a>
                 </p>
                 <p className="text-gray-700">
                   <strong>Address:</strong> Houston, Texas, USA

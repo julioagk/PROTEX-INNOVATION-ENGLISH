@@ -58,11 +58,11 @@ export default function Footer() {
                 <span className="text-xs md:text-sm font-medium">info_sales@protexinnovations.com</span>
               </a>
               <a 
-                href="tel:+17132015742" 
+                href="tel:+17138057630" 
                 className="flex items-center space-x-2 md:space-x-3 text-gray-600 hover:text-blue-600 transition-colors group"
               >
                 <FaPhone className="h-3 w-3 md:h-4 md:w-4" />
-                <span className="text-xs md:text-sm font-medium">+1 (713) 201-5742</span>
+                <span className="text-xs md:text-sm font-medium">713-805-7630</span>
               </a>
             </div>
           </div>
