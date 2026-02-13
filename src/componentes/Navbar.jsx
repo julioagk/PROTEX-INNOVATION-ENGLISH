@@ -234,7 +234,7 @@ export default function Navbar() {
               </div>
               <a
                 className="w-full mt-3 px-4 py-3 h-12 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-lg transition-all text-center flex items-center justify-center hover:shadow-lg active:scale-95"
-                href={`https://wa.me/17132015742?text=${encodeURIComponent(
+                href={`https://wa.me/17138057630?text=${encodeURIComponent(
                   `Hi! I want to make a purchase:\n\n${cart
                     .map((item, i) => `${i + 1}. ${(item.title || item.nombre)} x${item.quantity} - $${((item.price || item.precio) * item.quantity).toFixed(2)}`)
                     .join("\n")}\n\n═════════════════\nSubtotal: $${subtotal.toFixed(2)}\nTax (8.25%): $${ivaAmount.toFixed(2)}\nShipping: $9.99\n═════════════════\n💰 TOTAL: $${totalWithIVA.toFixed(2)}`

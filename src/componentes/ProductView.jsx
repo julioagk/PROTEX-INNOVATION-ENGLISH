@@ -398,7 +398,7 @@ export default function ProductView() {
                   className="w-full h-12 rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700 hover:shadow-lg active:scale-95 transition-all"
                   onClick={() => {
                     const msg = `Hello! I want to buy:\n\n${product.title || product.nombre} x${qty}\nUnit price: $${(product.price || product.precio)}\n\n?`;
-                    window.open(`https://wa.me/17132015742?text=${encodeURIComponent(msg)}`, "_blank");
+                    window.open(`https://wa.me/17138057630?text=${encodeURIComponent(msg)}`, "_blank");
                   }}
                 >
                   Buy via WhatsApp
