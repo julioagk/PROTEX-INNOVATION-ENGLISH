@@ -397,7 +397,12 @@ export default function ProductView() {
                 <button
                   className="w-full h-12 rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700 hover:shadow-lg active:scale-95 transition-all"
                   onClick={() => {
-                    const msg = `Hello! I want to buy:\n\n${product.title || product.nombre} x${qty}\nUnit price: $${(product.price || product.precio)}\n\n?`;
+                    const unitPrice = Number(product.price || product.precio) || 0;
+                    const lineSubtotal = unitPrice * qty;
+                    const taxRate = 0.0825;
+                    const taxAmount = lineSubtotal * taxRate;
+                    const totalWithTax = lineSubtotal + taxAmount;
+                    const msg = `Hello! I want to buy:\n\n${product.title || product.nombre} x${qty}\nUnit price: $${unitPrice.toFixed(2)}\nSubtotal: $${lineSubtotal.toFixed(2)}\nTax (8.25%): $${taxAmount.toFixed(2)}\nTotal: $${totalWithTax.toFixed(2)}`;
                     window.open(`https://wa.me/17138057630?text=${encodeURIComponent(msg)}`, "_blank");
                   }}
                 >
